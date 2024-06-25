@@ -33,7 +33,7 @@ def parse_arguments():
 #gives model order in plot
 model_ranking=['Average AI Algorithm','STU-Net','nnU-Net U-Net',
                'nnU-Net ResEncL','MedNeXt','UniSeg','Diff-UNet','LHU-Net','U-Net & CLIP', 
-               'NexToU','SegResNet & CLIP','SwinUNETR & CLIP','SegVol',
+               'NexToU','SegResNet','SwinUNETR & CLIP','SegVol',
                'UCTransNet','UNEST','SwinUNETR','UNETR','SAM-Adapter','CleanNet']
 
 #palette = sns.color_palette('bright', 30)
@@ -110,25 +110,25 @@ def rename_model(string):
         return 'UCTransNet'
     elif 'SegVol' in string or 'BoZhao' in string:
         return 'SegVol'
-    elif 'Saikat' in string or 'mednext' in string:
+    elif 'Saikat' in string or 'mednext' in string or 'MedNeXt' in string:
         return 'MedNeXt'
     elif 'SegResNet' in string or 'SuPreM_segresnet' in string:
-        return 'SegResNet & CLIP'
+        return 'SegResNet'
     elif 'nextou' in string or 'NexToU' in string:
         return 'NexToU'
-    elif 'SuPreM_UNet' in string or 'SuPreM_unet' in string or 'U-Net_CLIP' in string:
+    elif 'SuPreM_UNet' in string or 'SuPreM_unet' in string or 'U-Net_CLIP' in string or 'U-Net and CLIP' in string:
         return 'U-Net & CLIP'
-    elif 'SuPreM_swinunetr' in string or 'Swin_UNETR_CLIP' in string:
+    elif 'SuPreM_swinunetr' in string or 'Swin_UNETR_CLIP' in string or 'Swin UNETR and CLIP' in string:
         return 'SwinUNETR & CLIP'
     elif 'LHUNet' in string or 'LHU-Net' in string:
         return 'LHU-Net'
     elif 'ResEncL' in string or ('riginal' not in string and ('nnUNet' in string or 'nnunet' in string)):
         return 'nnU-Net ResEncL'
-    elif 'nnU-Net_U-Net' in string or ('riginal' in string and ('nnUNet' in string or 'nnunet' in string)):
+    elif 'nnU-Net_U-Net' in string or 'nnU-Net U-Net' in string or ('riginal' in string and ('nnUNet' in string or 'nnunet' in string)):
         return 'nnU-Net U-Net'
-    elif ('swinunetr' in string or 'Swin_UNETR' in string) and 'SuPreM' not in string and 'CLIP' not in string:
+    elif ('swinunetr' in string or 'Swin_UNETR' in string or 'Swin UNETR' in string) and 'SuPreM' not in string and 'CLIP' not in string:
         return 'SwinUNETR'
-    elif 'STU_base' in string or 'STUNetBase' in string or 'STU-Net-B' in string:
+    elif 'STU_base' in string or 'STUNetBase' in string or 'STU-Net-B' in string or 'STU-Net' in string:
         return 'STU-Net'
     elif 'SAM' in string:
         return 'SAM-Adapter'
@@ -219,17 +219,16 @@ def read_models_and_groups(args):
     #th: exclude groups with less samples than th
     th=int(args.th)
     
+    
     # Load model results
     #remove yiwen from dap atlas
     if not args.nsd:
-        model_files = [file for file in os.listdir(args.ckpt_root) if 'dice' in file \
-                      and ('DAPAtlas' not in args.ckpt_root or 'yiwen' not in file)]
+        model_files = [os.path.join(file,'dsc.csv') for file in os.listdir(args.ckpt_root)]
     else:
-        model_files = [file for file in os.listdir(args.ckpt_root) if 'nsd' in file\
-                      and ('DAPAtlas' not in args.ckpt_root or 'yiwen' not in file)]
+        model_files = [os.path.join(file,'nsd.csv') for file in os.listdir(args.ckpt_root)]
 
-    model_names = [rename_model(file[:file.rfind('_dice.csv')]) if not args.nsd else \
-                   rename_model(file[:file.rfind('_nsd.csv')]) for file in model_files]
+    model_names = [rename_model(file[:file.rfind('/')]) for file in model_files]
+    
     if args.test_set_only:
         split=pd.read_csv(args.split_path,sep=';')
         test_image_ids = split.loc[split['split'] == 'test', 'image_id'].tolist()
@@ -254,9 +253,6 @@ def read_models_and_groups(args):
     no_nan_samples=convert_to_long_format(results[list(results.keys())[0]],
                                           model_name=list(results.keys())[0],
                                           args=args).dropna(subset=['Value'])['name'].to_list()
-    #print(convert_to_long_format(results[list(results.keys())[0]],
-    #                                      model_name=list(results.keys())[0],
-    #                                      args=args).dropna(subset=['Value']).isna().any())
 
     if args.group_name=='all':#1 group with all samples
         groups_lists={'all':samples}
@@ -264,16 +260,11 @@ def read_models_and_groups(args):
     else:#per group-analysis
         # Load group lists
         group_files = [file for file in os.listdir(args.group_root) if '.pt' in file and args.group_name in file]
-        #for file in group_files:
-        #    print(file)
-        #    print(intersect(torch.load(os.path.join(args.group_root, file)),no_nan_samples))
         groups_lists = {rename_group(os.path.splitext(file)[0],args): torch.load(os.path.join(args.group_root, file)) for file in group_files \
    if intersect(torch.load(os.path.join(args.group_root, file)),no_nan_samples)>=th}
-        #print(groups_lists)
     
     order=[]
     group_names=list(groups_lists.keys())
-    #print(group_names)
     model_names=order_models(model_names)
     if args.group_name!='all' and args.group_name!='ages':
         #sort groups by average model performance
@@ -391,9 +382,17 @@ organDict={ 'spleen':'spleen',
 
 def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,save=False,
                    hide_model=False,limits=None,omit_metric=False,significance_test=True,
-                   colorful=True,title_style=None,rotation=45,font=None,fig_length=10):
+                   colorful=True,title_style=None,rotation=45,font=13,fig_length=10):
     
-    
+    if 'totalsegmentator_results' in args.ckpt_root:
+        dataset='TotalSegmentator'
+    elif 'dapatlas_results' in args.ckpt_root:
+        dataset='DAP Atlas'
+    elif 'PrivateGT' in args.ckpt_root or 'privateGT' in args.ckpt_root or 'JHH' in args.ckpt_root:
+        dataset='JHH'
+    else:
+        dataset=''
+        
     #this one rotates, the old one does not
     fig_width=len(group_order)*num_algos/36
     
@@ -424,29 +423,17 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
     category_type = pd.CategoricalDtype(categories=group_order, ordered=True)
     long_df['Group'] = long_df['Group'].astype(category_type)
     long_df.sort_values('Group', inplace=True)
-    #print(long_df)
     
     if hide_model:
         long_df['Group'] = long_df['Group'].apply(remove_model)
         
-    # Create color palette
-    #unique_colors = sns.color_palette("hsv", len(group_order) // num_groups + 1)
-    #color_palette = [color for color in unique_colors for _ in range(num_groups)][:len(group_order)]
 
     if args.group_name!='all':
-        #try:
-        #    color_palette=[model_color_dict[i[:i.rfind('-')]] for i in group_order]
-        #except:
-        #    color_palette=[model_color_dict[i[:second_last_rfind(i,'-')]] for i in group_order]
         color_palette=[find_color(i) for i in group_order]
     else:
         color_palette=[model_color_dict[i] for i in group_order]
-    #print(color_palette)
         
     if ax is None:
-        #ax=plt.figure(figsize=figsize)
-    #else:
-        #fig, ax = plt.subplots(figsize=figsize)
         fig, ax = plt.subplots(figsize=figsize)
     else:
         plt.sca(ax)
@@ -454,11 +441,11 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
     if not colorful:
         color_dict = {
         "TotalSegmentator": ["#FFA500"],  # Orange
-        "DAPAtlas": ["#0000FF"],  # Blue
-        "PrivateGT": ["#008000"]   # Green
+        "DAP Atlas": ["#0000FF"],  # Blue
+        "JHH": ["#008000"]   # Green
         }
         for key in color_dict:
-            if key in args.ckpt_root[args.ckpt_root[:-1].rfind('/')+1:]:
+            if key in dataset:
                 color_palette=color_dict[key]
         
     ax=sns.boxplot(
@@ -512,9 +499,8 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
     if group_name != 'all':
         title += ' by ' + group_name
 
-    dataset = args.ckpt_root[args.ckpt_root[:-1].rfind('/')+1:]
-    if dataset[-1] == '/':
-        dataset = dataset[:-1]
+    
+        
     title += ' in ' + dataset
     if args.test_set_only:
         title += ' official test set'
@@ -532,11 +518,11 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
     title=title.replace('DAPAtlas','DAP Atlas')
     
     
-    plt.title(break_title(title,fig_width=w), fontsize=max(19,font))
+    try:
+        plt.title(break_title(title,fig_width=w), fontsize=max(19,font))
+    except:
+        plt.title(break_title(title,fig_width=w), fontsize=max(19,font))
     
-
-    #for ticklabel, color in zip(ax.get_xticklabels() if orientation == 'v' else ax.get_yticklabels(), color_palette):
-        #ticklabel.set_color(color)
 
     plt.xticks(rotation=r, ha='right', fontsize=font)
     plt.tight_layout()
@@ -570,7 +556,6 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
             x_min=max(x_min - buffer,0)
             ax.set_xlim(x_min, 1.0)  # Assuming your data values range between 0 and 1
         plt.yticks(fontsize=font)
-        #print('my font is:', font)
 
     if significance_test:
         if Kruskal_Wallis_Pure(long_df) and args.group_name!='all':
@@ -588,18 +573,6 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
                                comparisons_correction='Bonferroni',hide_non_significant=True,
                                text_offset=0, line_height=0.01, fontsize=13)
             annotator.apply_and_annotate()
-        #significant_results=Kruskal_Wallis(long_df)
-    #else:
-    #    significant_results=None        
-    #if significant_results is not None:
-    #    if not significant_results.empty:
-    #        # Determine the correct axis for groups based on orientation
-    #        group_coord = xlabel if orientation == 'v' else ylabel
-    #        box_pairs = list(zip(significant_results['Group1'], significant_results['Group2']))
-    #        p_values = significant_results['P-Value Adjusted'].tolist()
-    #        annotator = Annotator(ax, box_pairs, data=long_df, x=group_coord, y='Value')
-    #        annotator.configure(text_format='star', loc='inside', verbose=2)
-    #        annotator.set_pvalues_and_annotate(p_values)
     
     if args.just_mean:
         # Modify individual ytick labels to remove 'Avg.-'
