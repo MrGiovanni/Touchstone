@@ -1,21 +1,25 @@
-# Touchstone
+<div align="center">
+  <img src="utils/AbdomenAtlas.png" alt="Touchstone Benchmark" width="200">
+  <br>
+  <h1><strong>Touchstone Benchmark</strong></h1>
+</div>
 
-Standard benchmarks often have underlying problems such as in-distribution and small-size test sets, oversimplified metrics, unfair comparisons, and short-term outcome pressure. Thus, good performance on standard benchmarks does not guarantee success in real-world scenarios. We address this misalignment issue with Touchstone, a large-scale collaborative benchmark for medical segmentation. **Touchstone is based on annotated CT datasets of unprecedented scale: 5,195 training volumes from 76 medical institutions around the world, and 6,933 testing volumes from 8 additional hospitals.** This extensive and diverse test set not only makes the benchmark results **more statistically meaningful** than existing ones, but also systematically **tests AI algorithms in varied out-of-distribution scenarios**. For coparison fainess, we **invite AI creators** to train their algorithms on the publicly available training set. Our team, as a third party, independently evaluates these algorithms on the test set (mostly private) and **reports their pros/cons from multiple perspectives**. We already collaborated with **14 influential research teams** in the field of medical segmentation, evaluating their AI algorithms. With long term commitment, **we remain accepting new submissions**. Moreover, we will soon launch the second edition of Touchstone, with an even larger training dataset and more annotated structures.
+We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventor to train their models on AbdomenAtlas, and we independently evaluate the algorithms. We already collaborated with **14** influential research teams, and we remain accepting new submissions.
 
 
 ## How to Participate?
 
 If you are the creator of an original segmentation algorithm, we invite you to participate!
 
-- First edition of Touchstone: [benchmark tutorial](https://docs.google.com/document/d/1NxOdpVyEiRhbTOl_1IszsW7Ayij36imGfkG62ppQgk4/edit?usp=sharing)
+- First edition of Touchstone: [benchmark tutorial](https://livejohnshopkins.sharepoint.com/:w:/r/sites/BodyMaps/Shared%20Documents/Collaboration/TutorialBenchmarkV1.docx?d=w7adb80080293445fb845f41103be6fc5&csf=1&web=1&e=iGafoB)
 
-Please read the tutorial above and send us your trained checkpoint, along with your model's name and citation (email pedro.salvadorbassi2@unibo.it). We will evaluate it add it to our future online leaderbord.
+Please read the tutorial above and send us your trained checkpoint, along with your model's name and citation (email psalvad2@jh.edu). We will evaluate it add it to our future online leaderbord.
 
 - Second edition of Touchstone: [call-for-benchmark](https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf)
 
-The second edition of Touchstone will feature an even larger training dataset, with 9,262 CT volumes and 25 fully-annotated anatomical structures!
+We will soon launch the second edition of Touchstone. It will feature an even larger training dataset, with 9,262 CT volumes and 25 fully-annotated anatomical structures!
 
-Please contact us (pedro.salvadorbassi2@unibo.it) for more information and opportunities to collaborate in the future Touchstone publications.
+Please contact us (psalvad2@jh.edu) for more information and opportunities to collaborate in the future Touchstone publications.
 
 ## Benchmark Setup
 
@@ -33,6 +37,11 @@ There is a [tutorial]() providing all the checkpoints and test sets (ask Zongwei
 
 
 ## Analyze Benchmark Results
+
+<p align="center">
+  <img src="utils/DiceTotalSegmentator.png" alt="Touchstone Benchmark" width="700">
+</p>
+
 
 We provide per-sample results for each checkpoint in test sets #2 and #3. These results are saved as csv files, structured as follows:
 
@@ -79,25 +88,28 @@ python -m ipykernel install --user --name touchstone --display-name "touchstone"
 ##### 3. Reproduce analysis figures in our paper
 
 ```bash
+cd notebooks
 #check datasets' meatadata, create lists of demographic groups, and plots in Figure 1:
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone TotalSegmentatorMetadata.ipynb
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone DAPAtlasMetadata.ipynb
-#result: plots are saved inside plotsTotalSegmentator/ and plotsDAPAtlas/
+#results: plots are saved inside Touchstone/outputs/plotsTotalSegmentator/ and Touchstone/outputs/plotsDAPAtlas/
 
 #per-group analysis: Figure 2 
-python PlotImage.py --stats
-#result: summary_groups.pdf
+cd ../plot
+python AggregatedBoxplot.py --stats
+#results: Touchstone/outputs/summary_groups.pdf
 
 #statistical significance maps (Appendix D.2.3):
-python PlotAllHeatmaps.py
-python PlotAllHeatmaps.py --organs second_half
-python PlotAllHeatmaps.py --nsd
-python PlotAllHeatmaps.py --organs second_half --nsd
-#results: pdf images named significance_heatmaps_...
+python PlotAllSignificanceMaps.py
+python PlotAllSignificanceMaps.py --organs second_half
+python PlotAllSignificanceMaps.py --nsd
+python PlotAllSignificanceMaps.py --organs second_half --nsd
+#results: Touchstone/outputs/heatmaps
 
 #detailed box-plots (results per-group and per-organ) and corresponding statistical tests (figures in Appendix D.4 and D.5):
-jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone GroupMetrics.ipynb
-#results are saved inside folders named box_plots... and in pdf files beginning as "boxplots_per_class"
+cd ../notebooks
+jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone GroupAnalysis.ipynb
+#results: Touchstone/outputs/box_plots
 ```
 
 ##### 4. Custom Analysis
@@ -105,8 +117,7 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touc
 The csv results files in totalsegmentator_results/ and dapatlas_results/ contain per-sample dsc and nsd scores. Rich meatdata for each one of those samples (sex, age, scanner, diagnosis,...) are available in metaTotalSeg.csv and 'Clinical Metadata FDG PET_CT Lesions.csv', for TotalSegmentator and DAP Atlas, respectively. The code in TotalSegmentatorMetadata.ipynb and DAPAtlasMetadata.ipynb extracts this meatdata into simplfied group lists (e.g., a list of all samples representing male patients), and saves these lists in the folders plotsTotalSegmentator/ and plotsDAPAtlas/. You can modify the code to generate custom sample lists (e.g., all men aged 30-35). To compare a set of groups, the filenames of all lists in the set should begin with the same name. For example, comp1_list_a.pt, comp1_list_b.pt, comp1_list_C.pt can represent a set of 3 groups. Then, PlotGroup.py can draw boxplots and perform statistical tests comparing the AI algorithm's results (dsc and nsd) for the samples inside the different custom lists you created. In our example, you just just need to specify --group_name comp1 when running PlotGroup.py:
 
 ```bash
-python PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root plotsTotalSegmentator/ \
-                    --group_name comp1 --organ liver --stats
+python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root outputs/plotsTotalSegmentator/ --group_name comp1 --organ liver --stats
 ```
 
 ## Citation

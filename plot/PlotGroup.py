@@ -16,14 +16,14 @@ def parse_arguments():
     parser.add_argument('--group_name', type=str, help='Group name to filter the sample lists')
     parser.add_argument('--nsd', action='store_true', help='Plot dice if not set', default=False)
     parser.add_argument('--organ', help='Organ to plot, or mean', default='mean')
-    parser.add_argument('--split_path', default='/run/media/pedro/e911bf59-fe8e-4ddb-8938-5dc4f40b094f/metaTotalSeg.csv', help='Location of TotalSegmentator metadata')
+    parser.add_argument('--split_path', default='../utils/metaTotalSeg.csv', help='Location of TotalSegmentator metadata')
     parser.add_argument('--test_set_only', action='store_true', help='Tests only on totalSegmentator test set', default=False)
     parser.add_argument('--mean_and_best', action='store_true', help='Plot only results for nnU-Net and for average of all models', default=False)
     parser.add_argument('--just_mean', action='store_true', help='Plot only results for average of all models', default=False)
     parser.add_argument('--th', help='exclude groups with less samples than th',default=5)
     parser.add_argument('--orientation', help='Plot orientation, h or v or auto',default='auto')
     parser.add_argument('--stats', action='store_true', help='Plot only results for nnU-Net and for average of all models', default=False)
-    parser.add_argument('--font', default=None)
+    parser.add_argument('--font', default=11)
     parser.add_argument('--fig_length', default='10')
     
     
@@ -590,7 +590,7 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
             ax.set_yticklabels(new_labels, rotation=0, ha='right')
         
     
-    folder = 'box_plots_' + dataset
+    folder = '../outputs/box_plots/box_plots_' + dataset
     if args.test_set_only:
         folder += '_test_set'
     os.makedirs(folder, exist_ok=True)

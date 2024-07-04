@@ -3,18 +3,19 @@ from PlotGroup import read_models_and_groups, create_long_format_dataframe, crea
 import matplotlib.gridspec as gridspec
 from argparse import Namespace
 import argparse
-import StatisticalHeatmap
+import SignificanceMaps as StatisticalHeatmap
+import os
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Generate dot and boxplots with confidence intervals.')
-    parser.add_argument('--ckpt_root_TotalSegmentator', type=str, help='Path to the directory containing model result CSV files',default='totalsegmentator_results/')
-    parser.add_argument('--ckpt_root_DAPAtlas', type=str, help='Path to the directory containing model result CSV files',default='dapatlas_results/')
-    parser.add_argument('--ckpt_root_JHH', type=str, help='Path to the directory containing model result CSV files',default='PrivateGT/')
-    parser.add_argument('--group_root_TotalSegmentator', type=str, help='Path to the directory containing group sample lists',default='plotsTotalSegmentator/')
-    parser.add_argument('--group_root_DAPAtlas', type=str, help='Path to the directory containing group sample lists',default='plotsDAPAtlas/')
-    parser.add_argument('--group_root_JHH', type=str, help='Path to the directory containing group sample lists',default='plotJHH/')
+    parser.add_argument('--ckpt_root_TotalSegmentator', type=str, help='Path to the directory containing model result CSV files',default='../totalsegmentator_results/')
+    parser.add_argument('--ckpt_root_DAPAtlas', type=str, help='Path to the directory containing model result CSV files',default='../dapatlas_results/')
+    parser.add_argument('--ckpt_root_JHH', type=str, help='Path to the directory containing model result CSV files',default='../PrivateGT/')
+    parser.add_argument('--group_root_TotalSegmentator', type=str, help='Path to the directory containing group sample lists',default='../outputs/plotsTotalSegmentator/')
+    parser.add_argument('--group_root_DAPAtlas', type=str, help='Path to the directory containing group sample lists',default='../outputs/plotsDAPAtlas/')
+    parser.add_argument('--group_root_JHH', type=str, help='Path to the directory containing group sample lists',default='../outputs/plotJHH/')
     parser.add_argument('--nsd', action='store_true', help='Plot dice if not set', default=False)
-    parser.add_argument('--split_path', default='metaTotalSeg.csv', help='Location of TotalSegmentator metadata')
+    parser.add_argument('--split_path', default='../utils/metaTotalSeg.csv', help='Location of TotalSegmentator metadata')
     parser.add_argument('--organs', type=str, help='list of organs',default='spleen kidneyR kidneyL gallbladder liver')
     return parser.parse_args()
 
@@ -84,7 +85,8 @@ def create_multiple_boxplots(args):
         #configs.subplot.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
     plt.tight_layout()
-    filename='significance_heatmaps_'+args.organs.replace(' ','_')
+    os.makedirs('../outputs/heatmaps',exist_ok=True)
+    filename='../outputs/heatmaps/significance_heatmaps_'+args.organs.replace(' ','_')
     if args.nsd:
         filename+='_nsd'
     filename+='.pdf'

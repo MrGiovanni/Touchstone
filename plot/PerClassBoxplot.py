@@ -7,16 +7,16 @@ import argparse
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Generate dot and boxplots with confidence intervals.')
     parser.add_argument('--dataset', type=str, help='name of dataset',default='TotalSegmentator')
-    parser.add_argument('--ckpt_root_TotalSegmentator', type=str, help='Path to the directory containing model result CSV files',default='totalsegmentator_results/')
+    parser.add_argument('--ckpt_root_TotalSegmentator', type=str, help='Path to the directory containing model result CSV files',default='../totalsegmentator_results/')
     parser.add_argument('--ckpt_root_JHH', type=str, help='Path to the directory containing model result CSV files',default='PrivateGT/')
-    parser.add_argument('--ckpt_root_DAPAtlas', type=str, help='Path to the directory containing model result CSV files',default='dapatlas_results/')
-    parser.add_argument('--group_root_TotalSegmentator', type=str, help='Path to the directory containing group sample lists',default='plotsTotalSegmentator/')
-    parser.add_argument('--group_root_DAPAtlas', type=str, help='Path to the directory containing group sample lists',default='plotsDAPAtlas/')
+    parser.add_argument('--ckpt_root_DAPAtlas', type=str, help='Path to the directory containing model result CSV files',default='../dapatlas_results/')
+    parser.add_argument('--group_root_TotalSegmentator', type=str, help='Path to the directory containing group sample lists',default='../outputs/plotsTotalSegmentator/')
+    parser.add_argument('--group_root_DAPAtlas', type=str, help='Path to the directory containing group sample lists',default='../outputs/plotsDAPAtlas/')
     parser.add_argument('--group_root_JHH', type=str, help='Path to the directory containing group sample lists',default='plotJHH/')
     parser.add_argument('--nsd', action='store_true', help='Plot dice if not set', default=False)
     parser.add_argument('--stats', action='store_true', help='Plot only results for nnU-Net and for average of all models', default=False)
     parser.add_argument('--test_set_only', action='store_true', help='Plot only results for nnU-Net and for average of all models', default=False)
-    parser.add_argument('--split_path', default='metaTotalSeg.csv', help='Location of TotalSegmentator metadata')
+    parser.add_argument('--split_path', default='../utils/metaTotalSeg.csv', help='Location of TotalSegmentator metadata')
     return parser.parse_args()
 
 
@@ -106,7 +106,7 @@ def create_multiple_boxplots(args):
         #configs.subplot.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
     plt.tight_layout()
-    filename='boxplots_per_class_'+args.dataset.replace(' ','_')
+    filename='../outputs/box_plots/box_plots_per_class_'+args.dataset.replace(' ','_')
     if args.nsd:
         print('NSD')
         filename+='_nsd'
