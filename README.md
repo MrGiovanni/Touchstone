@@ -11,7 +11,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 
 If you are the creator of an original segmentation algorithm, we invite you to participate!
 
-- First edition of Touchstone: [benchmark tutorial](https://livejohnshopkins.sharepoint.com/:w:/r/sites/BodyMaps/Shared%20Documents/Collaboration/TutorialBenchmarkV1.docx?d=w7adb80080293445fb845f41103be6fc5&csf=1&web=1&e=iGafoB)
+- First edition of Touchstone: [benchmark tutorial](https://www.cs.jhu.edu/~zongwei/advert/TutorialBenchmarkV1.pdf)
 
 Please read the tutorial above and send us your trained checkpoint, along with your model's name and citation (email psalvad2@jh.edu). We will evaluate it add it to our future online leaderbord.
 
