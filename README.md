@@ -87,26 +87,33 @@ python -m ipykernel install --user --name touchstone --display-name "touchstone"
 
 ##### 3. Reproduce analysis figures in our paper
 
+##### Figure 1 - Dataset statistics:
 ```bash
 cd notebooks
-#check datasets' meatadata, create lists of demographic groups, and plots in Figure 1:
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone TotalSegmentatorMetadata.ipynb
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone DAPAtlasMetadata.ipynb
 #results: plots are saved inside Touchstone/outputs/plotsTotalSegmentator/ and Touchstone/outputs/plotsDAPAtlas/
+```
 
-#per-group analysis: Figure 2 
+##### Figure 2 - Potential confrounders significantly impact AI performance:
+```bash
 cd ../plot
 python AggregatedBoxplot.py --stats
 #results: Touchstone/outputs/summary_groups.pdf
+```
 
+##### Appendix D.2.3 - Statistical significance maps:
+```bash
 #statistical significance maps (Appendix D.2.3):
 python PlotAllSignificanceMaps.py
 python PlotAllSignificanceMaps.py --organs second_half
 python PlotAllSignificanceMaps.py --nsd
 python PlotAllSignificanceMaps.py --organs second_half --nsd
 #results: Touchstone/outputs/heatmaps
+```
 
-#detailed box-plots (results per-group and per-organ) and corresponding statistical tests (figures in Appendix D.4 and D.5):
+##### Appendix D.4 and D.5 - Box-plots for per-group and per-organ results, with statistical tests:
+```bash
 cd ../notebooks
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone GroupAnalysis.ipynb
 #results: Touchstone/outputs/box_plots
