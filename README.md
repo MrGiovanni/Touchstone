@@ -4,7 +4,7 @@
   <h1><strong>Touchstone Benchmark</strong></h1>
 </div>
 
-We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventor to train their models on AbdomenAtlas, and we independently evaluate the algorithms. We already collaborated with **14** influential research teams, and we remain accepting new submissions.
+We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventors to train their models on AbdomenAtlas, and we independently evaluate their algorithms. We have already collaborated with **14** influential research teams, and we remain accepting new submissions.
 
 
 ## How to Participate?
