@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="utils/AbdomenAtlas.png" alt="Touchstone Benchmark" width="200">
+  <img src="utils/AbdomenAtlas.png" alt="Touchstone Benchmark" width="300">
   <br>
   <h1><strong>Touchstone Benchmark</strong></h1>
 </div>
