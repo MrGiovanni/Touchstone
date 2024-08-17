@@ -29,6 +29,19 @@ Please contact us (psalvad2@jh.edu) for more information and opportunities to co
 - Test set #2: public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
 - Test set #3: public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
 
+| benchmark | number of CT for training  | number of CT for testing |
+|:---------------|:---------------------:|:--------------------:|
+| MSD-CT |947 |465  |
+| FLARE’22 |2,050 |800 |
+| FLARE’23 |4,000 |400 |
+| KiTS21  |300 |100 |
+| AMOS22-CT |200 |200 |
+| LiTS  |130 |70 |
+| BTCV  |30 |20 |
+| CHAOS-CT |20 |20 |
+| Touchstone 1.0 | 5,195 | 6,933 |
+| Touchstone 2.0 | 9,262 | 6,933 |
+
 ## Evaluate Benchmark Checkpoints
 
 *Note: currently for internal use*
@@ -132,6 +145,15 @@ python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root out
 If you use this code or use our datasets for your research, please cite our papers:
 
 ```
+@article{li2024abdomenatlas,
+  title={AbdomenAtlas: A large-scale, detailed-annotated, \& multi-center dataset for efficient transfer learning and open algorithmic benchmarking},
+  author={Li, Wenxuan and Qu, Chongyu and Chen, Xiaoxi and Bassi, Pedro RAS and Shi, Yijia and Lai, Yuxiang and Yu, Qian and Xue, Huimin and Chen, Yixiong and Lin, Xiaorui and others},
+  journal={Medical Image Analysis},
+  pages={103285},
+  year={2024},
+  publisher={Elsevier}
+}
+
 @inproceedings{li2024well,
   title={How Well Do Supervised Models Transfer to 3D Image Segmentation?},
   author={Li, Wenxuan and Yuille, Alan and Zhou, Zongwei},
