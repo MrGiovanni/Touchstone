@@ -52,7 +52,7 @@ There is a [tutorial]() providing all the checkpoints and test sets (ask Zongwei
 ## Analyze Benchmark Results
 
 <p align="center">
-  <img src="utils/DiceTotalSegmentator.png" alt="Touchstone Benchmark" width="700">
+  <img src="utils/DiceTotalSegmentator.png" alt="Touchstone Benchmark" width="800">
 </p>
 
 
