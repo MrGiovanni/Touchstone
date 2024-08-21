@@ -118,8 +118,8 @@ dependencies:
   - ncurses=6.5=h59595ed_0
   - nest-asyncio=1.6.0=pyhd8ed1ab_0
   - ninja=1.12.1=h297d8ca_0
-  - notebook=7.0.8=py38h06a4308_1
-  - notebook-shim=0.2.3=py38h06a4308_0
+  #- notebook=7.0.8=py38h06a4308_1
+  #- notebook-shim=0.2.3=py38h06a4308_0
   - nspr=4.35=h27087fc_0
   - nss=3.100=hca3bf56_0
   - numexpr=2.8.4=py38hc78ab66_1
