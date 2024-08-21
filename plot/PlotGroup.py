@@ -237,7 +237,7 @@ def read_models_and_groups(args):
                    for model, file in zip(model_names, model_files)}
     else:
         results = {model: pd.read_csv(os.path.join(args.ckpt_root,file))\
-                   for model, file in zip(model_names, model_files)}
+                   for model, file in zip(model_names, model_files) if '.DS_Store' not in model}
         
     if args.mean_and_best:
         results={'Average AI Algorithm':mean_model_performance(results),
