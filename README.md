@@ -49,14 +49,15 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 </div>
 </details>
 
-
-## Benchmark Setup
-
+> [!NOTE]
 - Training set (first edition): [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) (*N*=5,195)
 - Training set (second edition): [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) (*N*=9,262)
 - Test set #1: proprietary JHH dataset (*N*=5,172)
 - Test set #2: public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
 - Test set #3: public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
+
+# Benchmark Setup
+
 
 | benchmark | number of CT for training  | number of CT for testing |
 |:---------------|:---------------------:|:--------------------:|
@@ -68,20 +69,13 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 | LiTS  |130 |70 |
 | BTCV  |30 |20 |
 | CHAOS-CT |20 |20 |
-| Touchstone 1.0 | 5,195 | 6,933 |
-| Touchstone 2.0 | 9,262 | 6,933 |
+| Touchstone 1.0 | [AbdomenAtlas1.0](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) ($N$=5,195) | [proprietary JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) ($N$=5,172) |
+| Touchstone 2.0 | [AbdomenAtlas1.1](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) ($N$=9,262) | [proprietary JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) ($N$=5,172) |
 
-## Evaluate Benchmark Checkpoints
-
-*Note: currently for internal use*
-
-There is a [tutorial]() providing all the checkpoints and test sets (ask Zongwei Zhou).
-
-
-## Analyze Benchmark Results
+# Analyze Benchmark Results
 
 <p align="center">
-  <img src="utils/DiceTotalSegmentator.png" alt="Touchstone Benchmark" width="800">
+  <img src="utils/DiceTotalSegmentator.png" alt="Touchstone Benchmark" width="1200">
 </p>
 
 
@@ -112,14 +106,14 @@ dapatlas_results
     ├── ...
 ```
 
-##### 1. Clone the GitHub repository
+#### 1. Clone the GitHub repository
 
 ```bash
 git clone https://github.com/MrGiovanni/Touchstone
 cd Touchstone
 ```
 
-##### 2. Create environments
+#### 2. Create environments
 
 ```bash
 conda env create -f environment.yml
@@ -127,9 +121,9 @@ source activate touchstone
 python -m ipykernel install --user --name touchstone --display-name "touchstone"
 ```
 
-##### 3. Reproduce analysis figures in our paper
+#### 3. Reproduce analysis figures in our paper
 
-##### Figure 1 - Dataset statistics:
+#### Figure 1 - Dataset statistics:
 ```bash
 cd notebooks
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone TotalSegmentatorMetadata.ipynb
@@ -137,14 +131,14 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touc
 #results: plots are saved inside Touchstone/outputs/plotsTotalSegmentator/ and Touchstone/outputs/plotsDAPAtlas/
 ```
 
-##### Figure 2 - Potential confrounders significantly impact AI performance:
+#### Figure 2 - Potential confrounders significantly impact AI performance:
 ```bash
 cd ../plot
 python AggregatedBoxplot.py --stats
 #results: Touchstone/outputs/summary_groups.pdf
 ```
 
-##### Appendix D.2.3 - Statistical significance maps:
+#### Appendix D.2.3 - Statistical significance maps:
 ```bash
 #statistical significance maps (Appendix D.2.3):
 python PlotAllSignificanceMaps.py
@@ -154,14 +148,14 @@ python PlotAllSignificanceMaps.py --organs second_half --nsd
 #results: Touchstone/outputs/heatmaps
 ```
 
-##### Appendix D.4 and D.5 - Box-plots for per-group and per-organ results, with statistical tests:
+#### Appendix D.4 and D.5 - Box-plots for per-group and per-organ results, with statistical tests:
 ```bash
 cd ../notebooks
 jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone GroupAnalysis.ipynb
 #results: Touchstone/outputs/box_plots
 ```
 
-##### 4. Custom Analysis
+#### 4. Custom Analysis
 
 The csv results files in totalsegmentator_results/ and dapatlas_results/ contain per-sample dsc and nsd scores. Rich meatdata for each one of those samples (sex, age, scanner, diagnosis,...) are available in metaTotalSeg.csv and 'Clinical Metadata FDG PET_CT Lesions.csv', for TotalSegmentator and DAP Atlas, respectively. The code in TotalSegmentatorMetadata.ipynb and DAPAtlasMetadata.ipynb extracts this meatdata into simplfied group lists (e.g., a list of all samples representing male patients), and saves these lists in the folders plotsTotalSegmentator/ and plotsDAPAtlas/. You can modify the code to generate custom sample lists (e.g., all men aged 30-35). To compare a set of groups, the filenames of all lists in the set should begin with the same name. For example, comp1_list_a.pt, comp1_list_b.pt, comp1_list_C.pt can represent a set of 3 groups. Then, PlotGroup.py can draw boxplots and perform statistical tests comparing the AI algorithm's results (dsc and nsd) for the samples inside the different custom lists you created. In our example, you just just need to specify --group_name comp1 when running PlotGroup.py:
 
@@ -169,9 +163,9 @@ The csv results files in totalsegmentator_results/ and dapatlas_results/ contain
 python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root outputs/plotsTotalSegmentator/ --group_name comp1 --organ liver --stats
 ```
 
-## Citation
+# Citation
 
-If you use this code or use our datasets for your research, please cite our papers:
+Please cite the following papers if you find our leaderboard or dataset helpful.
 
 ```
 @article{li2024abdomenatlas,
@@ -199,7 +193,7 @@ If you use this code or use our datasets for your research, please cite our pape
 }
 ```
 
-## Acknowledgement
+# Acknowledgement
 
 This work was supported by the Lustgarten Foundation for Pancreatic Cancer Research and the McGovern Foundation. Paper content is covered by patents pending.
 
