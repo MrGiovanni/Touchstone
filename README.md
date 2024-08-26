@@ -21,6 +21,13 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 <sup>1</sup>Johns Hopkins University, <sup>2</sup>NVIDIA, <sup>3</sup>DKFZ <br/>
 <a href='https://github.com/MrGiovanni/Touchstone'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~alanlab/Pubs24/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
 
+> [!NOTE]
+> - Training set (first edition): [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) (*N*=5,195)
+> - Training set (second edition): [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) (*N*=9,262)
+> - Test set #1: proprietary JHH dataset (*N*=5,172)
+> - Test set #2: public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
+> - Test set #3: public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
+
 | rank | model  | organization | average DSC | paper | github
 |:---|:---|:---|:---:|:---:|:---:|
 | 1 | MedNeXt 🏆 | DKFZ | 89.2 | [![arXiv](https://img.shields.io/badge/arXiv-2303.09975-b31b1b.svg)](https://arxiv.org/pdf/2303.09975) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/MedNeXt.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/MedNeXt) |
@@ -48,30 +55,6 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 
 </div>
 </details>
-
-> [!NOTE]
-> - Training set (first edition): [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) (*N*=5,195)
-
-- Training set (second edition): [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) (*N*=9,262)
-- Test set #1: proprietary JHH dataset (*N*=5,172)
-- Test set #2: public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
-- Test set #3: public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
-
-# Benchmark Setup
-
-
-| benchmark | number of CT for training  | number of CT for testing |
-|:---------------|:---------------------:|:--------------------:|
-| MSD-CT |947 |465  |
-| FLARE’22 |2,050 |800 |
-| FLARE’23 |4,000 |400 |
-| KiTS21  |300 |100 |
-| AMOS22-CT |200 |200 |
-| LiTS  |130 |70 |
-| BTCV  |30 |20 |
-| CHAOS-CT |20 |20 |
-| Touchstone 1.0 | [AbdomenAtlas1.0](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) ($N$=5,195) | [proprietary JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) ($N$=5,172) |
-| Touchstone 2.0 | [AbdomenAtlas1.1](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) ($N$=9,262) | [proprietary JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) ($N$=5,172) |
 
 # Analyze Benchmark Results
 
