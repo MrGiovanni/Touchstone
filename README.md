@@ -18,6 +18,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 > Training set
 > - Touchstone 1.0: [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) ($N$=5,195)
 > - Touchstone 2.0: [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) ($N$=9,262)
+> 
 > Test set 
 > - Proprietary JHH dataset ($N$=5,172)
 > - Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset ($N$=1,228)
