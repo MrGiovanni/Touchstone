@@ -3,7 +3,7 @@
 </div>
 
 
-<h1 align="center" style="font-size: 60px; margin-bottom: 4px">Touchstone Benchmark</h1>
+<h1 align="center" style="font-size: 80px; margin-bottom: 4px">Touchstone Benchmark</h1>
 <p align="center">
     <a href='https://www.cs.jhu.edu/~zongwei/advert/TutorialBenchmarkV1.pdf'><img src='https://img.shields.io/badge/Participate-Touchstone 1.0-blue'></a>
     <a href='https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf'><img src='https://img.shields.io/badge/Participate-Touchstone 2.0-red'></a>
