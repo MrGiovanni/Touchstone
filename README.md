@@ -15,11 +15,13 @@
 We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventors to train their models on AbdomenAtlas, and we independently evaluate their algorithms. We have already collaborated with **14** influential research teams, and we remain accepting new submissions.
 
 > [!NOTE]
-> - Training set (first edition): [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) (*N*=5,195)
-> - Training set (second edition): [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) (*N*=9,262)
-> - Test set #1: proprietary JHH dataset (*N*=5,172)
-> - Test set #2: public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
-> - Test set #3: public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
+> Training set
+> - Touchstone 1.0: [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) ($N$=5,195)
+> - Touchstone 2.0: [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) ($N$=9,262)
+> Test set 
+> - Proprietary JHH dataset ($N$=5,172)
+> - Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset ($N$=1,228)
+> - Public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset ($N$=533)
 
 # Touchstone 1.0 Leaderboard 
 
