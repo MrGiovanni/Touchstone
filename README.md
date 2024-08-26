@@ -6,6 +6,39 @@
 
 We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventors to train their models on AbdomenAtlas, and we independently evaluate their algorithms. We have already collaborated with **14** influential research teams, and we remain accepting new submissions.
 
+## Touchstone 1.0 Leaderboard
+
+<b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
+[Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ), [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ), [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ), [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ), ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/), [Zongwei Zhou](https://www.zongweiz.com/)* <br/>
+<a href='https://github.com/MrGiovanni/Touchstone'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~alanlab/Pubs24/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
+
+| rank | model  | organization | average DSC | average NSD | paper | github
+|:---|:---|:---|:---:|:---:|:---:|:---:|
+| 1 | MedNeXt 🏆 | DKFZ | 89.2 | 77.1 | [![arXiv](https://img.shields.io/badge/arXiv-2303.09975-b31b1b.svg)](https://arxiv.org/pdf/2303.09975) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/MedNeXt.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/MedNeXt) |
+| 1 | STU-NetB 🏆 | Shanghai AI Lab | 89.0 | 76.8 | [![arXiv](https://img.shields.io/badge/arXiv-2304.06716-b31b1b.svg)](https://arxiv.org/pdf/2304.06716) | [![GitHub stars](https://img.shields.io/github/stars/uni-medical/STU-Net.svg?logo=github&label=Stars)](https://github.com/uni-medical/STU-Net) |
+
+<details>
+<summary style="margin-left: 25px;">Aorta - NexToU 🏆 </summary>
+<div style="margin-left: 25px;">
+
+| rank | model  | organization | DSC | NSD | paper | github
+|:---|:---|:---|:---:|:---:|:---:|:---:|
+| 1 | NexToU 🏆 | HIT | 86.4 | 83.8 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/pdf/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
+
+</div>
+</details>
+
+<details>
+<summary style="margin-left: 25px;">Gallbladder - STU-NetB & MedNeXt 🏆 </summary>
+<div style="margin-left: 25px;">
+
+| rank | model  | organization | DSC | NSD | paper | github
+|:---|:---|:---|:---:|:---:|:---:|:---:|
+| 1 | STU-NetB 🏆 | Shanghai AI Lab | 85.5 | 75.6 | [![arXiv](https://img.shields.io/badge/arXiv-2304.06716-b31b1b.svg)](https://arxiv.org/pdf/2304.06716) | [![GitHub stars](https://img.shields.io/github/stars/uni-medical/STU-Net.svg?logo=github&label=Stars)](https://github.com/uni-medical/STU-Net) |
+| 1 | MedNeXt 🏆 | DKFZ | 85.3 | 75.6 | [![arXiv](https://img.shields.io/badge/arXiv-2303.09975-b31b1b.svg)](https://arxiv.org/pdf/2303.09975) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/MedNeXt.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/MedNeXt) |
+
+</div>
+</details>
 
 ## How to Participate?
 
