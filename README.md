@@ -3,7 +3,7 @@
 </div>
 
 
-<h2 align="center" style="font-size: 50px; margin-bottom: 4px">Touchstone Benchmark</h2>
+<h1 align="center" style="font-size: 60px; margin-bottom: 4px">Touchstone Benchmark</h1>
 <p align="center">
     <a href='https://www.cs.jhu.edu/~zongwei/advert/TutorialBenchmarkV1.pdf'><img src='https://img.shields.io/badge/Participate-Touchstone 1.0-blue'></a>
     <a href='https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf'><img src='https://img.shields.io/badge/Participate-Touchstone 2.0-red'></a>
@@ -14,7 +14,7 @@
 
 We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventors to train their models on AbdomenAtlas, and we independently evaluate their algorithms. We have already collaborated with **14** influential research teams, and we remain accepting new submissions.
 
-## Touchstone 1.0 Leaderboard 
+# Touchstone 1.0 Leaderboard 
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ)<sup>1</sup>, [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ)<sup>1</sup>, [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ)<sup>2</sup>, [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ)<sup>3</sup>, ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/)<sup>1</sup>, [Zongwei Zhou](https://www.zongweiz.com/)<sup>1</sup> <br/>
