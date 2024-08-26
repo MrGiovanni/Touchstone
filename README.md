@@ -6,7 +6,7 @@
 
 We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventors to train their models on AbdomenAtlas, and we independently evaluate their algorithms. We have already collaborated with **14** influential research teams, and we remain accepting new submissions.
 
-## Touchstone 1.0 Leaderboard
+## Touchstone 1.0 Leaderboard <a href='https://www.cs.jhu.edu/~zongwei/advert/TutorialBenchmarkV1.pdf'><img src='https://img.shields.io/badge/Participate-Touchstone 1.0-blue'></a> <a href='https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf'><img src='https://img.shields.io/badge/Participate-Touchstone 2.0-red'></a>
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ)<sup>1</sup>, [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ)<sup>1</sup>, [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ)<sup>2</sup>, [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ)<sup>3</sup>, ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/)<sup>1</sup>, [Zongwei Zhou](https://www.zongweiz.com/)<sup>1</sup> <br/>
@@ -41,19 +41,6 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 </div>
 </details>
 
-## How to Participate?
-
-If you are the creator of an original segmentation algorithm, we invite you to participate!
-
-- First edition of Touchstone: [benchmark tutorial](https://www.cs.jhu.edu/~zongwei/advert/TutorialBenchmarkV1.pdf)
-
-Please read the tutorial above and send us your trained checkpoint, along with your model's name and citation (email psalvad2@jh.edu). We will evaluate it add it to our future online leaderbord.
-
-- Second edition of Touchstone: [call-for-benchmark](https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf)
-
-We will soon launch the second edition of Touchstone. It will feature an even larger training dataset, with 9,262 CT volumes and 25 fully-annotated anatomical structures!
-
-Please contact us (psalvad2@jh.edu) for more information and opportunities to collaborate in the future Touchstone publications.
 
 ## Benchmark Setup
 
