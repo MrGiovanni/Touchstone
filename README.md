@@ -10,6 +10,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ), [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ), [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ), [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ), ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/), [Zongwei Zhou](https://www.zongweiz.com/)* <br/>
+Johns Hopkins University <br/>
 <a href='https://github.com/MrGiovanni/Touchstone'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~alanlab/Pubs24/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
 
 | rank | model  | organization | average DSC | paper | github
