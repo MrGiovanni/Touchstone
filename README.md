@@ -16,20 +16,21 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 
 > [!NOTE]
 > Training set
-> - Touchstone 1.0: [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) ($N$=5,195)
-> - Touchstone 2.0: [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) ($N$=9,262)
+> - Touchstone 1.0: [AbdomenAtlas1.0Mini](https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini) (*N*=5,195)
+> - Touchstone 2.0: [AbdomenAtlas1.1Mini](https://huggingface.co/datasets/AbdomenAtlas/_AbdomenAtlas1.1Mini) (*N*=9,262)
 > 
 > Test set 
-> - Proprietary JHH dataset ($N$=5,172)
-> - Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset ($N$=1,228)
-> - Public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset ($N$=533)
+> - Proprietary [JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) (*N*=5,172)
+> - Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
+> - Public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
 
 # Touchstone 1.0 Leaderboard 
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ)<sup>1</sup>, [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ)<sup>1</sup>, [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ)<sup>2</sup>, [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ)<sup>3</sup>, ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/)<sup>1</sup>, [Zongwei Zhou](https://www.zongweiz.com/)<sup>1</sup> <br/>
 <sup>1</sup>Johns Hopkins University, <sup>2</sup>NVIDIA, <sup>3</sup>DKFZ <br/>
-<a href='https://github.com/MrGiovanni/Touchstone'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~alanlab/Pubs24/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
+[project](https://www.zongweiz.com/dataset) | [paper](https://www.cs.jhu.edu/~alanlab/Pubs24/bassi2024touchstone.pdf) | [code](https://github.com/MrGiovanni/Touchstone) <br/>
+
 
 
 
