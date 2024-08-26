@@ -207,3 +207,7 @@ If you use this code or use our datasets for your research, please cite our pape
 ## Acknowledgement
 
 This work was supported by the Lustgarten Foundation for Pancreatic Cancer Research and the McGovern Foundation. Paper content is covered by patents pending.
+
+<div align="center">
+  <img src="utils/partner_logo.png" alt="Touchstone Benchmark" width="1200">
+</div>
