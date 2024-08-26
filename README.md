@@ -58,7 +58,6 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 - Test set #2: public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
 - Test set #3: public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
 
-> [!NOTE]
 | benchmark | number of CT for training  | number of CT for testing |
 |:---------------|:---------------------:|:--------------------:|
 | MSD-CT |947 |465  |
