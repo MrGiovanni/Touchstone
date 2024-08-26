@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="utils/AbdomenAtlas.png" alt="Touchstone Benchmark" width="300">
+  <img src="utils/logo_white_bg.png" alt="Touchstone Benchmark" width="300">
   <br>
   <h1><strong>Touchstone Benchmark</strong></h1>
 </div>
@@ -10,7 +10,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ)<sup>1</sup>, [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ)<sup>1</sup>, [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ)<sup>2</sup>, [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ)<sup>3</sup>, ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/)<sup>1</sup>, [Zongwei Zhou](https://www.zongweiz.com/)<sup>1</sup> <br/>
-<sup>1</sup>Johns Hopkins University, <sup>2</sup>NVIDIA, and <sup>3</sup>DKFZ <br/>
+<sup>1</sup>Johns Hopkins University, <sup>2</sup>NVIDIA, <sup>3</sup>DKFZ <br/>
 <a href='https://github.com/MrGiovanni/Touchstone'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~alanlab/Pubs24/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
 
 | rank | model  | organization | average DSC | paper | github
