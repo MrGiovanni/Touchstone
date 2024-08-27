@@ -36,7 +36,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 | 🏆 | MedNeXt | DKFZ | 89.2 | [![arXiv](https://img.shields.io/badge/arXiv-2303.09975-b31b1b.svg)](https://arxiv.org/pdf/2303.09975) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/MedNeXt.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/MedNeXt) |
 | 🏆 | STU-Net-B | Shanghai AI Lab | 89.0 | [![arXiv](https://img.shields.io/badge/arXiv-2304.06716-b31b1b.svg)](https://arxiv.org/pdf/2304.06716) | [![GitHub stars](https://img.shields.io/github/stars/uni-medical/STU-Net.svg?logo=github&label=Stars)](https://github.com/uni-medical/STU-Net) |
 | 🏆 | nnU-Net ResEncL | DKFZ | 88.8 | [![arXiv](https://img.shields.io/badge/arXiv-1809.10486-b31b1b.svg)](https://arxiv.org/abs/1809.10486) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/nnUNet.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/nnUNet) |
-| 6 | UniSeg | NPU | 88.8 | [![arXiv](https://img.shields.io/badge/arXiv-2304.03493-b31b1b.svg)](https://arxiv.org/abs/2304.03493) | [![GitHub stars](https://img.shields.io/github/stars/yeerwen/UniSeg.svg?logo=github&label=Stars)](https://github.com/yeerwen/UniSeg) |
+| 🏆 | UniSeg | NPU | 88.8 | [![arXiv](https://img.shields.io/badge/arXiv-2304.03493-b31b1b.svg)](https://arxiv.org/abs/2304.03493) | [![GitHub stars](https://img.shields.io/github/stars/yeerwen/UniSeg.svg?logo=github&label=Stars)](https://github.com/yeerwen/UniSeg) |
 | 🏆 | Diff-UNet | HKUST | 88.5 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10326-b31b1b.svg)](https://arxiv.org/abs/2303.10326) | [![GitHub stars](https://img.shields.io/github/stars/ge-xing/Diff-UNet.svg?logo=github&label=Stars)](https://github.com/ge-xing/Diff-UNet) |
 | 🏆 | NexToU | HIT | 87.8 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/abs/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
 | 7 | SegVol | BAAI | 87.1 | [![arXiv](https://img.shields.io/badge/arXiv-2311.13385-b31b1b.svg)](https://arxiv.org/abs/2311.13385) | [![GitHub stars](https://img.shields.io/github/stars/BAAI-DCAI/SegVol.svg?logo=github&label=Stars)](https://github.com/BAAI-DCAI/SegVol) |
@@ -92,7 +92,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 | 4 | STU-Net-B | Shanghai AI Lab | 91.9 | [![arXiv](https://img.shields.io/badge/arXiv-2304.06716-b31b1b.svg)](https://arxiv.org/pdf/2304.06716) | [![GitHub stars](https://img.shields.io/github/stars/uni-medical/STU-Net.svg?logo=github&label=Stars)](https://github.com/uni-medical/STU-Net) |
 | 5 | SegVol | BAAI | 91.8 | [![arXiv](https://img.shields.io/badge/arXiv-2311.13385-b31b1b.svg)](https://arxiv.org/abs/2311.13385) | [![GitHub stars](https://img.shields.io/github/stars/BAAI-DCAI/SegVol.svg?logo=github&label=Stars)](https://github.com/BAAI-DCAI/SegVol) |
 
-
+                                                                                                                                  
 </div>
 </details>
 
@@ -317,5 +317,5 @@ Please cite the following papers if you find our leaderboard or dataset helpful.
 This work was supported by the Lustgarten Foundation for Pancreatic Cancer Research and the McGovern Foundation. Paper content is covered by patents pending.
 
 <div align="center">
-  <img src="utils/partner_logo.jpg" alt="Touchstone Benchmark" width="1200">
+  <img src="utils/partner_logo.png" alt="Touchstone Benchmark" width="1200">
 </div>
