@@ -160,7 +160,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 </details>
 
 <details>
-<summary style="margin-left: 25px;">Spleen - nnU-NetResEncL & Diff-UNet 🏆 </summary>
+<summary style="margin-left: 25px;">Spleen - nnU-NetResEncL 🏆 </summary>
 <div style="margin-left: 25px;">
 
 | rank | model  | organization | DSC | paper | github |
