@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="utils/logo_white_bg.png" alt="Touchstone Benchmark" width="300">
+  <img src="utils/logo_white_bg.jpg" alt="Touchstone Benchmark" width="300">
 </div>
 
 
