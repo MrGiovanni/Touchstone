@@ -260,14 +260,27 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 </div>
 </details>
 
-# Analyze Benchmark Results
+# In-depth Result Analysis
 
-<p align="center">
-  <img src="utils/DiceTotalSegmentator.png" alt="Touchstone Benchmark" width="1200">
-</p>
+We provide *DSC and NSD per CT scan* for each checkpoint in test sets #2 and #3, and a code tutorial for easy:
+  - Per-organ performance analysis
+  - Performance comparison across demographic groups (age, sex, race, scanner, diagnosis, etc.)
+  - Statistical tests
+  - Boxplots
+  - Statistical significance heatmaps
+    
+You can easily modify our code to compare your custom model against our checkpoints, or to assess AI performance in custom demographic groups (e.g., hispanic men aged 20-25).
+
+<details>
+<summary style="margin-left: 25px;">Code tutorial </summary>
+<div style="margin-left: 25px;">
 
 
-We provide per-sample results for each checkpoint in test sets #2 and #3. These results are saved as csv files, structured as follows:
+Per-sample results are in CSV files inside the folders totalsegmentator_results and dapatlas_results.
+
+<details>
+<summary style="margin-left: 25px;">File structure </summary>
+<div style="margin-left: 25px;">
 
 ```
 totalsegmentator_results
@@ -293,6 +306,11 @@ dapatlas_results
     │   └── nsd.csv
     ├── ...
 ```
+
+</div>
+</details>
+
+To analyze a custom model and compare it to the checkpoints in Touchstone, simply save its per-sample results in the format exemplified in the provided dsc.csv and nsd.csv files.
 
 #### 1. Clone the GitHub repository
 
@@ -345,11 +363,23 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touc
 
 #### 4. Custom Analysis
 
+<details>
+<summary style="margin-left: 25px;">Define custom demographic groups and compare the corresponding per-group accuracy </summary>
+<div style="margin-left: 25px;">
+
 The csv results files in totalsegmentator_results/ and dapatlas_results/ contain per-sample dsc and nsd scores. Rich meatdata for each one of those samples (sex, age, scanner, diagnosis,...) are available in metaTotalSeg.csv and 'Clinical Metadata FDG PET_CT Lesions.csv', for TotalSegmentator and DAP Atlas, respectively. The code in TotalSegmentatorMetadata.ipynb and DAPAtlasMetadata.ipynb extracts this meatdata into simplfied group lists (e.g., a list of all samples representing male patients), and saves these lists in the folders plotsTotalSegmentator/ and plotsDAPAtlas/. You can modify the code to generate custom sample lists (e.g., all men aged 30-35). To compare a set of groups, the filenames of all lists in the set should begin with the same name. For example, comp1_list_a.pt, comp1_list_b.pt, comp1_list_C.pt can represent a set of 3 groups. Then, PlotGroup.py can draw boxplots and perform statistical tests comparing the AI algorithm's results (dsc and nsd) for the samples inside the different custom lists you created. In our example, you just just need to specify --group_name comp1 when running PlotGroup.py:
 
 ```bash
 python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root outputs/plotsTotalSegmentator/ --group_name comp1 --organ liver --stats
 ```
+
+</div>
+</details>
+
+
+
+</div>
+</details>
 
 # Citation
 
