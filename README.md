@@ -262,6 +262,14 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 
 # In-depth Result Analysis
 
+<div align="left">
+  <img src="utils/AvgDice&PerGroupAnalysis.png" alt="Average Dice and Per-group Analysis" width="1200">
+</div>
+
+<div align="left">
+  <img src="utils/HeatmapsJHH.png" alt="Heatmaps for JHH" width="1200">
+</div>
+
 We provide *DSC and NSD per CT scan* for each checkpoint in test sets #2 and #3, and a code tutorial for easy:
   - Per-organ performance analysis
   - Performance comparison across demographic groups (age, sex, race, scanner, diagnosis, etc.)
