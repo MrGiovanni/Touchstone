@@ -214,7 +214,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 </details>
 
 <details>
-<summary style="margin-left: 25px;">Spleen - nnU-NetResEncL 🏆 </summary>
+<summary style="margin-left: 25px;">Spleen - nnU-Net ResEncL 🏆 </summary>
 <div style="margin-left: 25px;">
 
 | rank | model  | organization | DSC | paper | github |
@@ -237,7 +237,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 </details>
 
 <details>
-<summary style="margin-left: 25px;">Stomach - STU-Net-B & MedNeXt & nnU-NetResEncL 🏆 </summary>
+<summary style="margin-left: 25px;">Stomach - STU-Net-B & MedNeXt & nnU-Net ResEncL 🏆 </summary>
 <div style="margin-left: 25px;">
 
 | rank | model  | organization | DSC | paper | github |
