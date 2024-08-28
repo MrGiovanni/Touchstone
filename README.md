@@ -307,7 +307,7 @@ dapatlas_results
 </div>
 </details>
 
-To analyze a custom model and compare it to the checkpoints in Touchstone, simply save its per-sample results in the format exemplified in the provided dsc.csv and nsd.csv files.
+You can easily modify our code to compare your custom model to our checkpoints, or to analyze performance in custom demographic groups (e.g., hispanic men aged 20-25).
 
 #### 1. Clone the GitHub repository
 
