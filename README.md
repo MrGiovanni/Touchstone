@@ -268,10 +268,11 @@ We provide *DSC and NSD per CT scan* for each checkpoint in test sets #2 and #3,
   - Pair-wise statistical tests and significance heatmaps
   - Boxplots
 
+You can easily modify our code to compare your custom model to our checkpoints, or to analyze performance in custom demographic groups (e.g., hispanic men aged 20-25).
+
 <details>
 <summary style="margin-left: 25px;">Code tutorial </summary>
 <div style="margin-left: 25px;">
-
 
 Per-sample results are in CSV files inside the folders totalsegmentator_results and dapatlas_results.
 
@@ -306,8 +307,6 @@ dapatlas_results
 
 </div>
 </details>
-
-You can easily modify our code to compare your custom model to our checkpoints, or to analyze performance in custom demographic groups (e.g., hispanic men aged 20-25).
 
 #### 1. Clone the GitHub repository
 
