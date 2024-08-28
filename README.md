@@ -263,7 +263,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 # In-depth Result Analysis
 
 <div align="center">
-  <img src="utils/JHHAnalysis.png" alt="JHH Analysis" width="1200">
+  <img src="utils/JHHAnalysiswlCaptions.png" alt="JHH Analysis" width="1200">
 </div>
 
 We provide *DSC and NSD per CT scan* for each checkpoint in test sets #2 and #3, and a code tutorial for easy:
