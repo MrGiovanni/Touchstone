@@ -265,9 +265,8 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 We provide *DSC and NSD per CT scan* for each checkpoint in test sets #2 and #3, and a code tutorial for easy:
   - Per-organ performance analysis
   - Performance comparison across demographic groups (age, sex, race, scanner, diagnosis, etc.)
-  - Statistical tests
+  - Pair-wise statistical tests and significance heatmaps
   - Boxplots
-  - Statistical significance heatmaps
     
 You can easily modify our code to compare your custom model against our checkpoints, or to assess AI performance in custom demographic groups (e.g., hispanic men aged 20-25).
 
