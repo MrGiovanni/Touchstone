@@ -6,10 +6,10 @@
 
 <p align="center">
     <a href='https://www.cs.jhu.edu/~zongwei/advert/TutorialBenchmarkV1.pdf'>
-        <img src='https://img.shields.io/badge/Participate%20Touchstone%201.0-%233F51B5?style=for-the-badge' alt='Participate Touchstone 1.0'>
+        <img src='https://img.shields.io/badge/Participate%20--%20Touchstone%201.0-%233F51B5?style=for-the-badge' alt='Participate - Touchstone 1.0'>
     </a>
     <a href='https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf'>
-        <img src='https://img.shields.io/badge/Participate%20Touchstone%202.0-%23F44336?style=for-the-badge' alt='Participate Touchstone 2.0'>
+        <img src='https://img.shields.io/badge/Participate%20--%20Touchstone%202.0-%23F44336?style=for-the-badge' alt='Participate - Touchstone 2.0'>
     </a>
     <br/>
     <a href="https://github.com/MrGiovanni/Touchstone">
