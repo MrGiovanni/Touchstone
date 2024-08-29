@@ -270,7 +270,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 <summary style="margin-left: 25px;">* </summary>
 <div style="margin-left: 25px;">
 
-Each cell in the signficicance heatmap indicates a one-sided statistical test. Red indicates that the x-axis AI algorithm is significantly superior to the y-axis algorithm in terms of DSC.
+Each cell in the significance heatmap above indicates a one-sided statistical test. Red indicates that the x-axis AI algorithm is significantly superior to the y-axis algorithm in terms of DSC, for one organ.
   
 </div>
 </details>
