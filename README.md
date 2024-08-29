@@ -266,6 +266,15 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
   <img src="utils/JHHAnalysiswlCaptions.png" alt="JHH Analysis" width="1200">
 </div>
 
+<details>
+<summary style="margin-left: 25px;">* </summary>
+<div style="margin-left: 25px;">
+
+Each cell in the significance heatmap above indicates a one-sided statistical test. Red indicates that the x-axis AI algorithm is significantly superior to the y-axis algorithm in terms of DSC, for one organ.
+  
+</div>
+</details>
+
 We provide *DSC and NSD per CT scan* for each checkpoint in test sets #2 and #3, and a code tutorial for easy:
   - Per-organ performance analysis
   - Performance comparison across demographic groups (age, sex, race, scanner, diagnosis, etc.)
