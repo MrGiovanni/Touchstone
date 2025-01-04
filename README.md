@@ -33,6 +33,10 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 > - Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
 > - Public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
 
+<div align="center">
+  <img src="utils/fig_metadata.png" alt="metadata" width="100%">
+</div>
+
 # Touchstone 1.0 Leaderboard 
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
