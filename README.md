@@ -37,6 +37,8 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
   <img src="utils/fig_metadata.png" alt="metadata" width="100%">
 </div>
 
+*Figure 1. Metadata distribution in the test set.*
+
 # Touchstone 1.0 Leaderboard 
 
 <b>Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?</b> <br/>
