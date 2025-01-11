@@ -11,14 +11,18 @@
     <a href='https://www.cs.jhu.edu/~zongwei/advert/Call4Benchmark.pdf'>
         <img src='https://img.shields.io/badge/Participate%20--%20Touchstone%202.0-%23F44336?style=for-the-badge' alt='Participate - Touchstone 2.0'>
     </a>
-    <br/>
-    <a href="https://github.com/MrGiovanni/Touchstone">
-        <img src="https://img.shields.io/github/stars/MrGiovanni/Touchstone?style=social" alt='GitHub Stars' />
-    </a>
-    <a href="https://twitter.com/bodymaps317">
-        <img src="https://img.shields.io/twitter/follow/BodyMaps?style=social" alt="Follow on Twitter" />
-    </a>
 </p>
+
+<div align="center">
+
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=MrGiovanni/Touchstone)
+[![GitHub Repo stars](https://img.shields.io/github/stars/MrGiovanni/Touchstone?style=social)](https://github.com/MrGiovanni/SuPreM/stargazers)
+<a href="https://twitter.com/bodymaps317">
+        <img src="https://img.shields.io/twitter/follow/BodyMaps?style=social" alt="Follow on Twitter" />
+</a><br/>
+**Subscribe us: https://groups.google.com/u/2/g/bodymaps**  
+
+</div>
 
 
 We present Touchstone, a large-scale  medical segmentation benchmark based on annotated **5,195** CT volumes from **76** hospitals for training, and **6,933** CT volumes from **8** additional hospitals for testing. We invite AI inventors to train their models on AbdomenAtlas, and we independently evaluate their algorithms. We have already collaborated with **14** influential research teams, and we remain accepting new submissions.
