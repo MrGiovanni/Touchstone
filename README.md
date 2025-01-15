@@ -35,7 +35,6 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 > Test set 
 > - Proprietary [JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) (*N*=5,172)
 > - Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
-> - Public [DAP Atlas](https://github.com/alexanderjaus/AtlasDataset) dataset (*N*=533)
 
 <div align="center">
   <img src="utils/fig_metadata.png" alt="metadata" width="100%">
