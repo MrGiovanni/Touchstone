@@ -33,7 +33,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ)<sup>1</sup>, [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ)<sup>1</sup>, [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ)<sup>2</sup>, [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ)<sup>3</sup>, ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/)<sup>1</sup>, [Zongwei Zhou](https://www.zongweiz.com/)<sup>1</sup> <br/>
 <sup>1</sup>Johns Hopkins University, <sup>2</sup>NVIDIA, <sup>3</sup>DKFZ <br/>
 NeurIPS 2024 <br/>
-<a href='https://www.zongweiz.com/dataset'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~zongwei/publication/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a> <a href='document/jhu_seminar_slides.pdf'><img src='https://img.shields.io/badge/Slides-Seminar-orange'></a> <a href='document/rsna2024_abstract.pdf'><img src='https://img.shields.io/badge/Abstract-RSNA-purple'></a> <a href='document/rsna2024_slides.pdf'><img src='https://img.shields.io/badge/Slides-RSNA-orange'></a>
+<a href='https://www.zongweiz.com/dataset'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~zongwei/publication/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a> <a href='document/jhu_seminar_slides.pdf'><img src='https://img.shields.io/badge/Slides-Seminar-orange'></a> <a href='document/rsna2024_abstract.pdf'><img src='https://img.shields.io/badge/Abstract-RSNA-purple'></a> <a href='document/rsna2024_slides.pdf'><img src='https://img.shields.io/badge/Slides-RSNA-orange'></a> [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/tPnTCFUTjjY)
 
 # Touchstone 1.0 Leaderboard 
 
@@ -290,23 +290,23 @@ NeurIPS 2024 <br/>
 > [!NOTE]
 > We will soon begin releasing the trained AI models evaluated in Touchstone right here. Stay tuned!
 
-| rank | model  | organization | average DSC | download
-|:---|:---|:---|:---:|:---:|
-| 🏆 | MedNeXt | DKFZ | 89.2 | |
-| 🏆 | STU-Net-B | Shanghai AI Lab | 89.0 | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 🏆 | MedFormer | Rutgers | 89.0 |  |
-| 🏆 | nnU-Net ResEncL | DKFZ | 88.8 |  |
-| 🏆 | UniSeg | NPU | 88.8 |  |
-| 🏆 | Diff-UNet | HKUST | 88.5 |  |
-| 🏆 | LHU-Net | UR | 88.0 |  |
-| 🏆 | NexToU | HIT | 87.8 | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 9 | SegVol | BAAI | 87.1 |  |
-| 10 | U-Net & CLIP | CityU | 87.1 |  |
-| 11 | Swin UNETR & CLIP | CityU | 86.7 |  |
-| 12 | Swin UNETR | NVIDIA | 80.1 |  |
-| 13 | UNesT | NVIDIA | 79.1 |  |
-| 14 | SAM-Adapter | Duke | 73.4 |  |
-| 15 | UNETR | NVIDIA| 64.4 |  |
+| rank | model | average DSC | parameter | speed | download
+|:---|:---|:---:|:---:|:---:|:---:|
+| 🏆 | MedNeXt | 89.2 | | |
+| 🏆 | STU-Net-B | 89.0 | | | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 🏆 | MedFormer | 89.0 |  | |
+| 🏆 | nnU-Net ResEncL | 88.8 |  | |
+| 🏆 | UniSeg | 88.8 |  | |
+| 🏆 | Diff-UNet | 88.5 |  | |
+| 🏆 | LHU-Net | 88.0 |  | |
+| 🏆 | NexToU | 87.8 | | | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 9 | SegVol | 87.1 |  | |
+| 10 | U-Net & CLIP | 87.1 |  | |
+| 11 | Swin UNETR & CLIP | 86.7 |  | |
+| 12 | Swin UNETR | 80.1 |  | |
+| 13 | UNesT | 79.1 |  | |
+| 14 | SAM-Adapter | 73.4 |  | |
+| 15 | UNETR | 64.4 |  | |
 
 
 # Citation
