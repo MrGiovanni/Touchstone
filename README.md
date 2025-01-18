@@ -16,10 +16,10 @@
 <div align="center">
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=MrGiovanni/Touchstone&left_color=%2363C7E6&right_color=%23CEE75F)
+[![GitHub Repo stars](https://img.shields.io/github/stars/MrGiovanni/Touchstone?style=social)](https://github.com/MrGiovanni/SuPreM/stargazers) <br/>
 [![touchstone leaderboard](https://img.shields.io/badge/Touchstone-Leaderboard-cyan.svg)](https://github.com/MrGiovanni/Touchstone/tree/main?tab=readme-ov-file#touchstone-10-leaderboard)
 [![touchstone dataset](https://img.shields.io/badge/Touchstone-Dataset-cyan.svg)](https://github.com/MrGiovanni/Touchstone/tree/main?tab=readme-ov-file#touchstone-10-dataset)
 [![touchstone model](https://img.shields.io/badge/Touchstone-Model-cyan.svg)](https://github.com/MrGiovanni/Touchstone/tree/main?tab=readme-ov-file#touchstone-10-model)
-[![GitHub Repo stars](https://img.shields.io/github/stars/MrGiovanni/Touchstone?style=social)](https://github.com/MrGiovanni/SuPreM/stargazers)
 <a href="https://twitter.com/bodymaps317">
         <img src="https://img.shields.io/twitter/follow/BodyMaps?style=social" alt="Follow on Twitter" />
 </a><br/>
