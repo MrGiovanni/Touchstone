@@ -288,7 +288,7 @@ NeurIPS 2024 <br/>
 # Touchstone 1.0 Model
 
 > [!NOTE]
-> #### <span style="color:red;"></span> 🚨 We will soon begin releasing the trained AI models evaluated in Touchstone right here. Stay tuned!
+> We will soon begin releasing the trained AI models evaluated in Touchstone right here. Stay tuned!
 
 | rank | model  | organization | average DSC | download
 |:---|:---|:---|:---:|:---:|
