@@ -290,9 +290,28 @@ NeurIPS 2024 <br/>
 > [!NOTE]
 > #### <span style="color:red;"></span> 🚨 We will soon begin releasing the trained AI models evaluated in Touchstone right here. Stay tuned!
 
+| rank | model  | organization | average DSC | download
+|:---|:---|:---|:---:|:---:|
+| 🏆 | MedNeXt | DKFZ | 89.2 | |
+| 🏆 | STU-Net-B | Shanghai AI Lab | 89.0 | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 🏆 | MedFormer | Rutgers | 89.0 |  |
+| 🏆 | nnU-Net ResEncL | DKFZ | 88.8 |  |
+| 🏆 | UniSeg | NPU | 88.8 |  |
+| 🏆 | Diff-UNet | HKUST | 88.5 |  |
+| 🏆 | LHU-Net | UR | 88.0 |  |
+| 🏆 | NexToU | HIT | 87.8 | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 9 | SegVol | BAAI | 87.1 |  |
+| 10 | U-Net & CLIP | CityU | 87.1 |  |
+| 11 | Swin UNETR & CLIP | CityU | 86.7 |  |
+| 12 | Swin UNETR | NVIDIA | 80.1 |  |
+| 13 | UNesT | NVIDIA | 79.1 |  |
+| 14 | SAM-Adapter | Duke | 73.4 |  |
+| 15 | UNETR | NVIDIA| 64.4 |  |
+
+
 # Citation
 
-Please cite the following papers if you find our leaderboard or dataset helpful.
+Please cite the following papers if you find our study helpful.
 
 ```
 @article{bassi2024touchstone,
