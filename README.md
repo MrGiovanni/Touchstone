@@ -289,7 +289,7 @@ NeurIPS 2024 <br/>
 
 *Figure 1. Metadata distribution in the test set.*
 
-# Touchstone 1.0 Model
+# Touchstone 1.0 Models
 
 > [!NOTE]
 > We will soon begin releasing the trained AI models evaluated in Touchstone right here. Stay tuned!
