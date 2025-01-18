@@ -294,23 +294,23 @@ NeurIPS 2024 <br/>
 > [!NOTE]
 > We will soon begin releasing the trained AI models evaluated in Touchstone right here. Stay tuned!
 
-| rank | model | average DSC | parameter | speed | download
+| rank | model                  | average DSC | parameter | speed | download |
 |:---|:---|:---:|:---:|:---:|:---:|
-| 🏆 | MedNeXt | 89.2 | | |
-| 🏆 | STU-Net-B | 89.0 | | | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 🏆 | MedFormer | 89.0 |  | |
-| 🏆 | nnU-Net ResEncL | 88.8 |  | |
-| 🏆 | UniSeg | 88.8 |  | |
-| 🏆 | Diff-UNet | 88.5 |  | |
-| 🏆 | LHU-Net | 88.0 |  | |
-| 🏆 | NexToU | 87.8 | | | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 9 | SegVol | 87.1 |  | |
-| 10 | U-Net & CLIP | 87.1 |  | |
-| 11 | Swin UNETR & CLIP | 86.7 |  | |
-| 12 | Swin UNETR | 80.1 |  | |
-| 13 | UNesT | 79.1 |  | |
-| 14 | SAM-Adapter | 73.4 |  | |
-| 15 | UNETR | 64.4 |  | |
+| 🏆 | MedNeXt               | 89.2        | 61.8M     |       |          |
+| 🏆 | STU-Net-B             | 89.0        | 58.3M     |       | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 🏆 | MedFormer             | 89.0        | 38.5M     |       |          |
+| 🏆 | nnU-Net ResEncL       | 88.8        | 102.0M    |       |          |
+| 🏆 | UniSeg                | 88.8        | 31.0M     |       |          |
+| 🏆 | Diff-UNet             | 88.5        | 434.0M    |       |          |
+| 🏆 | LHU-Net               | 88.0        | 8.6M      |       |          |
+| 🏆 | NexToU                | 87.8        | 81.9M     |       | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 9   | SegVol               | 87.1        | 181.0M    |       |          |
+| 10  | U-Net & CLIP         | 87.1        | 19.1M     |       |          |
+| 11  | Swin UNETR & CLIP    | 86.7        | 62.2M     |       |          |
+| 12  | Swin UNETR           | 80.1        | 72.8M     |       |          |
+| 13  | UNesT                | 79.1        | 87.2M     |       |          |
+| 14  | SAM-Adapter          | 73.4        | 11.6M     |       |          |
+| 15  | UNETR                | 64.4        | 101.8M    |       |          |
 
 
 # Citation
