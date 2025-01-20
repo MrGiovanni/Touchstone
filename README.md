@@ -304,7 +304,7 @@ NeurIPS 2024 <br/>
 | 🏆 | Diff-UNet             | 88.5        | 434.0M    | ★★★☆☆           |          |
 | 🏆 | LHU-Net               | 88.0        | 8.6M      | ★★★★★           |          |
 | 🏆 | NexToU                | 87.8        | 81.9M     | ★★★★☆           | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 9   | SegVol               | 87.1        | 181.0M    | ★★★★☆           |          |
+| 9   | SegVol               | 87.1        | 181.0M    | ★★★★☆           | <a href="https://github.com/BAAI-DCAI/SegVol/blob/main/readme_AbdomenAtlas.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>         |
 | 10  | U-Net & CLIP         | 87.1        | 19.1M     | ★★★☆☆           |          |
 | 11  | Swin UNETR & CLIP    | 86.7        | 62.2M     | ★★★☆☆           |          |
 | 12  | Swin UNETR           | 80.1        | 72.8M     | ★★★★★           |          |
