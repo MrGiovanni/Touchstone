@@ -299,7 +299,7 @@ NeurIPS 2024 <br/>
 | 🏆 | MedNeXt               | 89.2        | 61.8M     | ★☆☆☆☆           |          |
 | 🏆 | STU-Net-B             | 89.0        | 58.3M     | ★★☆☆☆           | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
 | 🏆 | MedFormer             | 89.0        | 38.5M     | ★★★☆☆           |          |
-| 🏆 | nnU-Net ResEncL       | 88.8        | 102.0M    | ★★★★☆           |          |
+| 🏆 | nnU-Net ResEncL       | 88.8        | 102.0M    | ★★★★☆           | <a href="https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/dataset_conversion/Dataset224_AbdomenAtlas1.0.py" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
 | 🏆 | UniSeg                | 88.8        | 31.0M     | ☆☆☆☆☆           |          |
 | 🏆 | Diff-UNet             | 88.5        | 434.0M    | ★★★☆☆           |          |
 | 🏆 | LHU-Net               | 88.0        | 8.6M      | ★★★★★           |          |
@@ -311,6 +311,9 @@ NeurIPS 2024 <br/>
 | 13  | UNesT                | 79.1        | 87.2M     | ★★★★★           |          |
 | 14  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |          |
 | 15  | UNETR                | 64.4        | 101.8M    | ★★★★★           |          |
+
+
+
 
 # Citation
 
