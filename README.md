@@ -37,7 +37,7 @@ We present Touchstone, a large-scale  medical segmentation benchmark based on an
 [Pedro R. A. S. Bassi](https://scholar.google.com.hk/citations?user=NftgL6gAAAAJ)<sup>1</sup>, [Wenxuan Li](https://scholar.google.com/citations?hl=en&user=tpNZM2YAAAAJ)<sup>1</sup>, [Yucheng Tang](https://scholar.google.com.hk/citations?hl=en&user=0xheliUAAAAJ)<sup>2</sup>, [Fabian Isensee](https://scholar.google.com.hk/citations?hl=en&user=PjerEe4AAAAJ)<sup>3</sup>, ..., [Alan Yuille](https://www.cs.jhu.edu/~ayuille/)<sup>1</sup>, [Zongwei Zhou](https://www.zongweiz.com/)<sup>1</sup> <br/>
 <sup>1</sup>Johns Hopkins University, <sup>2</sup>NVIDIA, <sup>3</sup>DKFZ <br/>
 NeurIPS 2024 <br/>
-${\color{red} {\textbf{[JHU CS News](https://www.cs.jhu.edu/news/a-touchstone-of-medical-artificial-intelligence/)}}}$ <br/>
+{\textbf{[JHU CS News](https://www.cs.jhu.edu/news/a-touchstone-of-medical-artificial-intelligence/)}} <br/>
 
 <a href='https://www.zongweiz.com/dataset'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~zongwei/publication/bassi2024touchstone.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a> <a href='document/jhu_seminar_slides.pdf'><img src='https://img.shields.io/badge/Slides-Seminar-orange'></a> <a href='document/rsna2024_abstract.pdf'><img src='https://img.shields.io/badge/Abstract-RSNA-purple'></a> <a href='document/rsna2024_slides.pdf'><img src='https://img.shields.io/badge/Slides-RSNA-orange'></a> [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/tPnTCFUTjjY)
 
