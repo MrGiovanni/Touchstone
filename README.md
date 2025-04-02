@@ -352,11 +352,11 @@ NeurIPS 2024 <br/>
 | 10   | SegVol               | 87.1        | 181.0M    | ★★★★☆           | <a href="https://github.com/BAAI-DCAI/SegVol/blob/main/readme_AbdomenAtlas.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>         |
 | 11  | U-Net & CLIP         | 87.1        | 19.1M     | ★★★☆☆           |          |
 | 12  | Swin UNETR & CLIP    | 86.7        | 62.2M     | ★★★☆☆           |          |
-| 13  | Swin UNETR           | 80.1        | 72.8M     | ★★★★★           |          |
-| 14  | UNesT                | 79.1        | 87.2M     | ★★★★★           |          |
-| 15  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |          |
+| 13  | Swin UNETR           | 84.8        | 72.8M     | ★★★★★           |          |
+| 14  | UNesT                | 84.9        | 87.2M     | ★★★★★           |          |
+| 17  | UNETR                | 83.3        | 101.8M    | ★★★★★           |          |
 | 16  | UCTransNet           | 81.1        | 68.0M     | ★★★★☆           |          |
-| 17  | UNETR                | 64.4        | 101.8M    | ★★★★★           |          |
+| 15  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |          |
 
 
 
