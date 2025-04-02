@@ -341,20 +341,22 @@ NeurIPS 2024 <br/>
 | rank | model                  | average DSC | parameter | infer. speed | download |
 |:---|:---|:---|:---|:---|:---|
 | 🏆 | MedNeXt               | 89.2        | 61.8M     | ★☆☆☆☆           |          |
-| 🏆 | STU-Net-B             | 89.0        | 58.3M     | ★★☆☆☆           | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 🏆 | MedFormer             | 89.0        | 38.5M     | ★★★☆☆           |          |
-| 🏆 | nnU-Net ResEncL       | 88.8        | 102.0M    | ★★★★☆           | <a href="https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/dataset_conversion/Dataset224_AbdomenAtlas1.0.py" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 🏆 | UniSeg                | 88.8        | 31.0M     | ☆☆☆☆☆           |          |
-| 🏆 | Diff-UNet             | 88.5        | 434.0M    | ★★★☆☆           |          |
-| 🏆 | LHU-Net               | 88.0        | 8.6M      | ★★★★★           | <a href="https://github.com/xmindflow/LHUNet/tree/main/AbdomenAtlas1.0" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 🏆 | NexToU                | 87.8        | 81.9M     | ★★★★☆           | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
-| 9   | SegVol               | 87.1        | 181.0M    | ★★★★☆           | <a href="https://github.com/BAAI-DCAI/SegVol/blob/main/readme_AbdomenAtlas.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>         |
-| 10  | U-Net & CLIP         | 87.1        | 19.1M     | ★★★☆☆           |          |
-| 11  | Swin UNETR & CLIP    | 86.7        | 62.2M     | ★★★☆☆           |          |
-| 12  | Swin UNETR           | 80.1        | 72.8M     | ★★★★★           |          |
-| 13  | UNesT                | 79.1        | 87.2M     | ★★★★★           |          |
-| 14  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |          |
-| 15  | UNETR                | 64.4        | 101.8M    | ★★★★★           |          |
+| 🏆 | MedFormer             |  89.0       | 38.5M     | ★★★☆☆           |          |
+| 3 | STU-Net-B             | 89.0        | 58.3M     | ★★☆☆☆           | <a href="https://github.com/uni-medical/STU-Net/tree/main/AbdomenAtlas" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 4 | nnU-Net U-Net         | 88.9        | 102.0M    | ★★★★☆           | <a href="https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/dataset_conversion/Dataset224_AbdomenAtlas1.0.py" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 5 | nnU-Net ResEncL       | 88.8        | 102.0M    | ★★★★☆           | <a href="https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/dataset_conversion/Dataset224_AbdomenAtlas1.0.py" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 6 | UniSeg                | 88.8        | 31.0M     | ☆☆☆☆☆           |          |
+| 7 | Diff-UNet             | 88.5        | 434.0M    | ★★★☆☆           |          |
+| 8 | LHU-Net               | 88.0        | 8.6M      | ★★★★★           | <a href="https://github.com/xmindflow/LHUNet/tree/main/AbdomenAtlas1.0" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 9 | NexToU                | 87.8        | 81.9M     | ★★★★☆           | <a href="https://github.com/PengchengShi1220/NexToU/blob/NexToU_nnunetv2/NexToU_Touchstone%20Benchmark.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/> |
+| 10   | SegVol               | 87.1        | 181.0M    | ★★★★☆           | <a href="https://github.com/BAAI-DCAI/SegVol/blob/main/readme_AbdomenAtlas.md" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>         |
+| 11  | U-Net & CLIP         | 87.1        | 19.1M     | ★★★☆☆           |          |
+| 12  | Swin UNETR & CLIP    | 86.7        | 62.2M     | ★★★☆☆           |          |
+| 13  | Swin UNETR           | 80.1        | 72.8M     | ★★★★★           |          |
+| 14  | UNesT                | 79.1        | 87.2M     | ★★★★★           |          |
+| 15  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |          |
+| 16  | UCTransNet           | 81.1        | 68.0M     | ★★★★☆           |          |
+| 17  | UNETR                | 64.4        | 101.8M    | ★★★★★           |          |
 
 
 
