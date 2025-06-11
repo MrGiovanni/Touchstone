@@ -356,7 +356,7 @@ NeurIPS 2024 <br/>
 | 14  | UNesT                | 84.9        | 87.2M     | ★★★★★           |          |
 | 15  | UNETR                | 83.3        | 101.8M    | ★★★★★           |          |
 | 16  | UCTransNet           | 81.1        | 68.0M     | ★★★★☆           |          |
-| 17  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |          |
+| 17  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |  <a href="https://drive.google.com/drive/folders/1VuIwR-STOjD5NUJtU40aMDmJOQX_onZw" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>         |
 
 
 
