@@ -358,7 +358,110 @@ NeurIPS 2024 <br/>
 | 16  | UCTransNet           | 81.1        | 68.0M     | ★★★★☆           |          |
 | 17  | SAM-Adapter          | 73.4        | 11.6M     | ★★★★☆           |  <a href="https://drive.google.com/drive/folders/1VuIwR-STOjD5NUJtU40aMDmJOQX_onZw" style="margin: 2px;"> <img alt="checkpoint" src="https://img.shields.io/badge/⚡_checkpoint-instruction-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>         |
 
+# Evaluation Code
 
+<details>
+<summary style="margin-left: 25px;">Click to expand </summary>
+<div style="margin-left: 25px;">
+
+#### 1. Clone the GitHub repository
+
+```bash
+git clone https://github.com/MrGiovanni/Touchstone
+cd Touchstone
+```
+
+#### 2. Create environments
+
+```bash
+conda env create -f environment.yml
+source activate touchstone
+python -m ipykernel install --user --name touchstone --display-name "touchstone"
+```
+
+#### 3. Reproduce analysis figures in our paper
+
+#### Figure 1 - Dataset statistics:
+```bash
+cd notebooks
+jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone TotalSegmentatorMetadata.ipynb
+jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone DAPAtlasMetadata.ipynb
+#results: plots are saved inside Touchstone/outputs/plotsTotalSegmentator/ and Touchstone/outputs/plotsDAPAtlas/
+```
+
+#### Figure 2 - Potential confrounders significantly impact AI performance:
+```bash
+cd ../plot
+python AggregatedBoxplot.py --stats
+#results: Touchstone/outputs/summary_groups.pdf
+```
+
+If you are including a new segmentation model in the evaluation, organize its results following the structure in the CSV files inside the folders totalsegmentator_results and dapatlas_results (see below). Also, include its name in the model_ranking list in [plot/PlotGroup.py](plot/PlotGroup.py).
+
+<details>
+<summary style="margin-left: 25px;">File structure </summary>
+<div style="margin-left: 25px;">
+
+```
+totalsegmentator_results
+    ├── Diff-UNet
+    │   ├── dsc.csv
+    │   └── nsd.csv
+    ├── LHU-Net
+    │   ├── dsc.csv
+    │   └── nsd.csv
+    ├── MedNeXt
+    │   ├── dsc.csv
+    │   └── nsd.csv
+    ├── ...
+dapatlas_results
+    ├── Diff-UNet
+    │   ├── dsc.csv
+    │   └── nsd.csv
+    ├── LHU-Net
+    │   ├── dsc.csv
+    │   └── nsd.csv
+    ├── MedNeXt
+    │   ├── dsc.csv
+    │   └── nsd.csv
+    ├── ...
+```
+
+</div>
+</details>
+
+#### Appendix D.2.3 - Statistical significance maps:
+```bash
+#statistical significance maps (Appendix D.2.3):
+python PlotAllSignificanceMaps.py
+python PlotAllSignificanceMaps.py --organs second_half
+python PlotAllSignificanceMaps.py --nsd
+python PlotAllSignificanceMaps.py --organs second_half --nsd
+#results: Touchstone/outputs/heatmaps
+```
+
+#### Appendix D.4 and D.5 - Box-plots for per-group and per-organ results, with statistical tests:
+```bash
+cd ../notebooks
+jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touchstone GroupAnalysis.ipynb
+#results: Touchstone/outputs/box_plots
+```
+
+#### 4. Custom Analysis
+
+<details>
+<summary style="margin-left: 25px;">Define custom demographic groups (e.g., hispanic men aged 20-25) and compare AI performance on them </summary>
+<div style="margin-left: 25px;">
+
+The csv results files in totalsegmentator_results/ and dapatlas_results/ contain per-sample dsc and nsd scores. Rich meatdata for each one of those samples (sex, age, scanner, diagnosis,...) are available in metaTotalSeg.csv and 'Clinical Metadata FDG PET_CT Lesions.csv', for TotalSegmentator and DAP Atlas, respectively. The code in TotalSegmentatorMetadata.ipynb and DAPAtlasMetadata.ipynb extracts this meatdata into simplfied group lists (e.g., a list of all samples representing male patients), and saves these lists in the folders plotsTotalSegmentator/ and plotsDAPAtlas/. You can modify the code to generate custom sample lists (e.g., all men aged 30-35). To compare a set of groups, the filenames of all lists in the set should begin with the same name. For example, comp1_list_a.pt, comp1_list_b.pt, comp1_list_C.pt can represent a set of 3 groups. Then, PlotGroup.py can draw boxplots and perform statistical tests comparing the AI algorithm's results (dsc and nsd) for the samples inside the different custom lists you created. In our example, you just just need to specify --group_name comp1 when running PlotGroup.py:
+
+```bash
+python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root outputs/plotsTotalSegmentator/ --group_name comp1 --organ liver --stats
+```
+
+</div>
+</details>
+</details>
 
 
 # Citation
