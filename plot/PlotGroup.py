@@ -127,10 +127,10 @@ def rename_model(string):
         return 'U-Net & CLIP'
     
     # nnU-Net variants (order matters - check U-Net variant before ResEncL)
-    if 'nnu-net_u-net' in string_lower or 'nnu-net u-net' in string_lower or ('riginal' in string and ('nnunet' in string_lower or 'nnunet' in string_lower)):
+    if 'nnu-net_u-net' in string_lower or 'nnu-net u-net' in string_lower or ('riginal' in string and 'nnunet' in string_lower):
         return 'nnU-Net U-Net'
     
-    if 'resencl' in string_lower or ('riginal' not in string and ('nnunet' in string_lower or 'nnunet' in string_lower)):
+    if 'resencl' in string_lower or ('riginal' not in string and 'nnunet' in string_lower):
         return 'nnU-Net ResEncL'
     
     # SwinUNETR (check after CLIP variants)
@@ -435,9 +435,14 @@ def remove_model(value):
     return value
 
 def find_model(value):
-    for m in model_ranking+['Avg.','Average AI Algorithm']:
+    """Find which model a value string belongs to.
+    
+    Returns the model name if found, None otherwise.
+    """
+    for m in model_ranking + ['Avg.', 'Average AI Algorithm']:
         if m in value:
             return m
+    return None
 
 organDict={ 'spleen':'spleen',
             'kidney_right':'kidneyR',

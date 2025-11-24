@@ -57,7 +57,7 @@ def rank(results, args):
     
     return sorted(means, key=means.get, reverse=True)
     
-def allign(df1, df2):
+def align(df1, df2):
     """Align two dataframes by common 'name' values, optimized for performance.
     
     Removes NaN values, duplicates, and sorts by 'name' to ensure proper alignment.
@@ -122,7 +122,7 @@ def HeatmapOfSignificance(args,ax=None):
     comparison_pairs = []
     
     for (group1, group2) in comparisons:
-        df1, df2 = allign(results[group1], results[group2])
+        df1, df2 = align(results[group1], results[group2])
         # Test both directions
         p1 = wilcoxon_one_sided(df1, df2)
         p_values.append(p1.item())
@@ -205,7 +205,7 @@ def HeatmapOfSignificanceNoCorrection(args,ax=None):
     comparison_pairs = []
     
     for (group1, group2) in comparisons:
-        df1, df2 = allign(results[group1], results[group2])
+        df1, df2 = align(results[group1], results[group2])
         # Test both directions
         p1 = wilcoxon_one_sided(df1, df2)
         p_values.append(p1.item())
