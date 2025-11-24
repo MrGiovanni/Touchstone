@@ -99,80 +99,53 @@ def HeatmapOfSignificance(args,ax=None):
     p_args.just_mean=False
     p_args.split_path=args.split_path
     results, groups_lists, order, num_groups, num_algos = read_models_and_groups(p_args)
-    groups=rank(results,args)
-    for model in results:#get only organ we want
-        if args.organ=='mean':
-            #try:
-            #    results[model]['mean']=results[model].drop(columns=['Average','name']).mean(axis=1)
-            #except:
-            #    results[model]['mean']=results[model].drop(columns=['name']).mean(axis=1)
-            #results[model]=results[model][['name', 'mean']]
-            try:
-                results[model]=results[model][['name', 'Average']]
-            except:
-                #print('Problem: no Average in ',model)
-                #print(results[model])
-                results[model]['Average']=results[model].drop(columns=['name']).mean(axis=1)
-                #print(results[model].drop(columns=['name']).mean(axis=1))
-                results[model]=results[model][['name', 'Average']]
-                #print(results[model])
+    groups = rank(results, args)
+    
+    # Extract relevant organ data for each model - optimize with comprehension
+    for model in results:
+        if args.organ == 'mean':
+            if 'Average' in results[model].columns:
+                results[model] = results[model][['name', 'Average']]
+            else:
+                # Create Average column if it doesn't exist
+                results[model] = results[model].copy()
+                results[model]['Average'] = results[model].drop(columns=['name']).mean(axis=1)
+                results[model] = results[model][['name', 'Average']]
         else:
-            results[model]=results[model][['name', args.organ]]
+            results[model] = results[model][['name', args.organ]]
     
+    # Generate all pairwise comparisons (bidirectional)
+    comparisons = [(g1, g2) for g1, g2 in combinations(groups, 2)]
     
-    comparisons = list(combinations(groups, 2))
-    
-    # Perform pair-wise tests
+    # Perform pair-wise tests - optimize to avoid intermediate lists
     p_values = []
-    tmp=[]
+    comparison_pairs = []
+    
     for (group1, group2) in comparisons:
-        #print(group1,group2)
-        df1, df2=allign(results[group1], results[group2])
+        df1, df2 = allign(results[group1], results[group2])
+        # Test both directions
         p1 = wilcoxon_one_sided(df1, df2)
         p_values.append(p1.item())
-        tmp.append((group1, group2))
+        comparison_pairs.append((group1, group2))
+        
         p2 = wilcoxon_one_sided(df2, df1)
         p_values.append(p2.item())
-        tmp.append((group2, group1))
-    comparisons=tmp
-        
-    #print(p_values)
-
-    for i,p in enumerate(p_values,0):
-        group1, group2=comparisons[i]
-        #print(group1,'>', group2,'p:',p)
-        
+        comparison_pairs.append((group2, group1))
+    
     # Correct for multiple comparisons using Holm's method
     _, corrected_p_values, _, _ = multipletests(p_values, method='holm')
-    #print(len(p_values),len(corrected_p_values))
-    #corrected_p_values=p_values
     
-    for i,p in enumerate(corrected_p_values,0):
-        group1, group2=comparisons[i]
-        #print(group1,'>', group2,'p:',p)
-        
-        
     # Create a DataFrame to store the results
     significance_matrix = pd.DataFrame(np.nan, index=list(reversed(groups)), columns=groups)
- 
-
-    # Fill in the matrix with corrected p-values
-    for (group1, group2), p in zip(comparisons, corrected_p_values):
-        if p < 0.05:
-            significance_matrix.loc[group2, group1] = 1  # Yellow 
-            #significance_matrix.loc[group1, group2] = -1  # Blue 
-        else:
-            #significance_matrix.loc[group1, group2] = -1
-            significance_matrix.loc[group2, group1] = -1
-
+    
+    # Fill in the matrix with corrected p-values - vectorized approach
+    for (group1, group2), p in zip(comparison_pairs, corrected_p_values):
+        significance_matrix.loc[group2, group1] = 1 if p < 0.05 else -1
+    
     # Create a custom color map
     from matplotlib.colors import ListedColormap
-
     cmap = ListedColormap(['blue', 'white', 'yellow'])
-
-    # Revert the order of the y-axis labels
-    #reversed_groups = groups[::-1]
-
+    
     # Plotting the significance map using a heatmap
     if ax is None:
         fig, ax = plt.subplots(figsize=(5, 4))
@@ -222,75 +195,51 @@ def HeatmapOfSignificanceNoCorrection(args,ax=None):
                 results[model]['mean']=results[model].drop(columns=['name']).mean(axis=1)
             results[model]=results[model][['name', 'mean']]
         else:
-            results[model]=results[model][['name', args.organ]]
+            results[model] = results[model][['name', args.organ]]
     
+    # Generate all pairwise comparisons (bidirectional)
+    comparisons = [(g1, g2) for g1, g2 in combinations(groups, 2)]
     
-    comparisons = list(combinations(groups, 2))
-    
-   # Perform pair-wise tests
+    # Perform pair-wise tests
     p_values = []
-    tmp=[]
+    comparison_pairs = []
+    
     for (group1, group2) in comparisons:
-        df1, df2=allign(results[group1], results[group2])
+        df1, df2 = allign(results[group1], results[group2])
+        # Test both directions
         p1 = wilcoxon_one_sided(df1, df2)
         p_values.append(p1.item())
-        tmp.append((group1, group2))
+        comparison_pairs.append((group1, group2))
+        print(f'{group1} > {group2} p: {p1.item()}')
+        
         p2 = wilcoxon_one_sided(df2, df1)
         p_values.append(p2.item())
-        tmp.append((group2, group1))
-    comparisons=tmp
-        
-    #print(p_values)
-
-    for i,p in enumerate(p_values,0):
-        group1, group2=comparisons[i]
-        print(group1,'>', group2,'p:',p)
-        
-    # Correct for multiple comparisons using Holm's method
-    #p_crr={}
-    #for model in groups:
-    #    pc=[[comp,p_values[i]] for i,comp in enumerate(comparisons,0) if comp[0]==model]
-    #    p=[pval for comp,pval in pc]
-    #    _, corrected_p_values, _, _ = multipletests(p, method='holm')
-    #    
-    #    for i,comp in enumerate(comparisons,0):
-    #        for j,(comp2,_) in enumerate(pc,0):
-    #            if comp2==comp:
-    #                p_values[i]=corrected_p_values[j]
-    #    
-    #    corrected_p_values=p_values
-        
-    corrected_p_values=p_values
-    # Create a DataFrame to store the results
+        comparison_pairs.append((group2, group1))
+        print(f'{group2} > {group1} p: {p2.item()}')
+    
+    # No correction applied in this version
+    corrected_p_values = p_values
+    
+    # Create significance matrix
     significance_matrix = pd.DataFrame(np.nan, index=list(reversed(groups)), columns=groups)
- 
-
-    # Fill in the matrix with corrected p-values
-    for (group1, group2), p in zip(comparisons, corrected_p_values):
-        if p < 0.05:
-            significance_matrix.loc[group2, group1] = 1  # Yellow 
-            #significance_matrix.loc[group1, group2] = -1  # Blue 
-        else:
-            #significance_matrix.loc[group1, group2] = -1
-            significance_matrix.loc[group2, group1] = -1
-
+    
+    # Fill in the matrix with p-values
+    for (group1, group2), p in zip(comparison_pairs, corrected_p_values):
+        significance_matrix.loc[group2, group1] = 1 if p < 0.05 else -1
+    
     # Create a custom color map
     from matplotlib.colors import ListedColormap
-
     cmap = ListedColormap(['blue', 'white', 'yellow'])
-
-    # Revert the order of the y-axis labels
-    #reversed_groups = groups[::-1]
-
+    
     # Plotting the significance map using a heatmap
     if ax is None:
         fig, ax = plt.subplots(figsize=(5, 4))
     else:
         plt.sca(ax)
-        
+    
     ax = sns.heatmap(significance_matrix, annot=False, cmap=cmap, center=0,
-                     xticklabels=groups, yticklabels=list(reversed(groups)), linewidths=0.5, linecolor='gray',
-                     cbar=False,ax=ax)
+                     xticklabels=groups, yticklabels=list(reversed(groups)), 
+                     linewidths=0.5, linecolor='gray', cbar=False, ax=ax)
 
     # Diagonal line to separate significant and non-significant areas
     plt.plot([0, len(groups)], [len(groups), 0], color='black', lw=1)

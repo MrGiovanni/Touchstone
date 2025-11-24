@@ -58,30 +58,32 @@ def find_color(model):
     raise ValueError(f'Unrecognized model: {model}')
 
 def Kruskal_Wallis(df):
+    """Perform Kruskal-Wallis test followed by pairwise Mann-Whitney U tests.
     
-    groups=df['Group'].unique()
+    Optimized to cache grouped data and use vectorized operations where possible.
+    """
+    groups = df['Group'].unique()
     
-    grouped_data = df.groupby('Group')['Value'].apply(list)
-
+    # Group once and convert to list - cache the result
+    grouped_dict = {group: df[df['Group'] == group]['Value'].values 
+                    for group in groups}
     
-    ## Prepare the data for the Kruskal-Wallis test
-    values = [group for group in grouped_data]
+    # Prepare data for Kruskal-Wallis test
+    values = list(grouped_dict.values())
     h_statistic, p_value = stats.kruskal(*values)
-
-    if p_value>0.05:
-        return None #no significant result
     
+    if p_value > 0.05:
+        return None  # no significant result
     
-    #Post-hoc tests: Wilcoxon rank sum tests/Mann–Whitney U test
+    # Post-hoc tests: Wilcoxon rank sum tests/Mann-Whitney U test
     results = []
-
-    # Perform pairwise Wilcoxon rank sum tests
+    
+    # Perform pairwise tests using cached grouped data
     for (group1, group2) in combinations(groups, 2):
-        group1_values = df[df['Group'] == group1]['Value']
-        group2_values = df[df['Group'] == group2]['Value']
-        stat, p_value = stats.mannwhitneyu(group1_values, group2_values, alternative='two-sided')
+        stat, p_value = stats.mannwhitneyu(grouped_dict[group1], grouped_dict[group2], 
+                                           alternative='two-sided')
         results.append((group1, group2, p_value))
-
+    
     # Convert results to a DataFrame
     results_df = pd.DataFrame(results, columns=['Group1', 'Group2', 'P-Value'])
     
@@ -94,21 +96,21 @@ def Kruskal_Wallis(df):
 
 
 def Kruskal_Wallis_Pure(df):
+    """Simplified Kruskal-Wallis test that only returns True/False for significance.
     
-    groups=df['Group'].unique()
+    Optimized version without post-hoc tests.
+    """
+    groups = df['Group'].unique()
     
+    # More efficient: use groupby and get values directly
     grouped_data = df.groupby('Group')['Value'].apply(list)
-
     
-    ## Prepare the data for the Kruskal-Wallis test
-    values = [group for group in grouped_data]
+    # Prepare the data for the Kruskal-Wallis test
+    values = list(grouped_data)
     h_statistic, p_value = stats.kruskal(*values)
-
-    if p_value<0.05:
-        return True
-    else:
-        return False
     
+    return p_value < 0.05
+
 
 def rename_model(string):
     """Map model string names to standardized names using pattern matching.
@@ -213,21 +215,28 @@ def intersect(list1, list2):
     # Use set intersection for O(n) complexity instead of O(n²)
     return len(set(list1) & set(list2))
 
-def mean_model_performance(df_dict,groups_lists=None,args=None):
-    #df_dict: results per model
-    combined_df = pd.concat(df_dict.values(), axis=0)
-    # Group by 'names' and compute the mean across all original DataFrames
-    df = combined_df.groupby('name').mean().reset_index()
+def mean_model_performance(df_dict, groups_lists=None, args=None):
+    """Compute mean model performance across all models.
     
-    if groups_lists is not None:#not for all and ages
-        long_df = convert_to_long_format(df, model_name='avg',args=args)
-        long_df = long_df.dropna(subset=['Value'])  # Drop rows with NaN values in 'Value'
-        means={}
+    Optimized to reduce redundant operations and use efficient lookups.
+    """
+    # Combine all dataframes and compute mean per sample
+    combined_df = pd.concat(df_dict.values(), axis=0)
+    df = combined_df.groupby('name').mean(numeric_only=True).reset_index()
+    
+    if groups_lists is not None:  # not for all and ages
+        long_df = convert_to_long_format(df, model_name='avg', args=args)
+        long_df = long_df.dropna(subset=['Value'])
+        
+        # Convert sample lists to sets for O(1) lookup
+        means = {}
         for group_name, sample_list in groups_lists.items():
-            group_df = long_df[long_df['name'].isin(sample_list)]
-            means[group_name]=group_df['Value'].mean()
-        group_order=sorted(means, key=lambda k: means[k], reverse=True)
-        return group_order
+            sample_set = set(sample_list) if not isinstance(sample_list, set) else sample_list
+            group_df = long_df[long_df['name'].isin(sample_set)]
+            means[group_name] = group_df['Value'].mean()
+        
+        # Sort by mean performance
+        return sorted(means, key=means.get, reverse=True)
     else:
         return df
 
@@ -380,25 +389,33 @@ def create_long_format_dataframe(results, groups_lists, args):
     return final_df
 
 
-def break_title(title,fig_width):
+def break_title(title, fig_width):
+    """Break title into multiple lines based on figure width.
+    
+    Optimized to use a more efficient line-breaking algorithm.
+    """
     # Adjust max_char_in_line based on figure width
     char_per_inch = 8  # Approximate number of characters per inch
-    max_char_in_line = int((fig_width * char_per_inch)//1)
+    max_char_in_line = int(fig_width * char_per_inch)
     
-    # Break title into multiple lines if necessary
+    if len(title) <= max_char_in_line:
+        return title
+    
+    # Break title into multiple lines at word boundaries
     parts = []
     while len(title) > max_char_in_line:
-        part = title[:max_char_in_line]
-        next_space = part.rfind(' ')
-        if next_space != -1:
-            parts.append(part[:next_space])
-            title = title[next_space+1:]
-        else:
-            parts.append(part)
-            title = title[max_char_in_line:]
-    parts.append(title)
-    title = '\n'.join(parts)
-    return title
+        # Find last space within limit
+        split_idx = title[:max_char_in_line].rfind(' ')
+        if split_idx == -1:
+            # No space found, force split at max_char_in_line
+            split_idx = max_char_in_line
+        parts.append(title[:split_idx])
+        title = title[split_idx:].lstrip()  # Remove leading whitespace
+    
+    if title:  # Add remaining text
+        parts.append(title)
+    
+    return '\n'.join(parts)
     
 
 def second_last_rfind(s, char):
@@ -479,27 +496,26 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
     
     if hide_model:
         long_df['Group'] = long_df['Group'].apply(remove_model)
-        
-
-    if args.group_name!='all':
-        color_palette=[find_color(i) for i in group_order]
+    
+    # Optimize color palette generation
+    if not colorful:
+        # Define color mapping for datasets
+        color_dict = {
+            "TotalSegmentator": "#FFA500",  # Orange
+            "DAP Atlas": "#0000FF",  # Blue
+            "JHH": "#008000"  # Green
+        }
+        # Use single color for non-colorful plots
+        color_palette = [color_dict.get(dataset, "#808080")]  # Default to gray
+    elif args.group_name != 'all':
+        color_palette = [find_color(i) for i in group_order]
     else:
-        color_palette=[model_color_dict[i] for i in group_order]
-        
+        color_palette = [model_color_dict[i] for i in group_order]
+    
     if ax is None:
         fig, ax = plt.subplots(figsize=figsize)
     else:
         plt.sca(ax)
-        
-    if not colorful:
-        color_dict = {
-        "TotalSegmentator": ["#FFA500"],  # Orange
-        "DAP Atlas": ["#0000FF"],  # Blue
-        "JHH": ["#008000"]   # Green
-        }
-        for key in color_dict:
-            if key in dataset:
-                color_palette=color_dict[key]
         
     ax=sns.boxplot(
         x=xlabel, 
@@ -610,22 +626,21 @@ def create_boxplot(long_df, group_order, num_groups, args, num_algos, ax=None,sa
             ax.set_xlim(x_min, 1.0)  # Assuming your data values range between 0 and 1
         plt.yticks(fontsize=font)
 
-    if significance_test:
-        if Kruskal_Wallis_Pure(long_df) and args.group_name!='all':
-            group_comb=[item for item in combinations(long_df['Group'].unique(), 2)]
-            group_comb=[item for item in group_comb if find_model(item[0])==find_model(item[1])]
-                
-            #print(group_comb)
+    if significance_test and args.group_name != 'all':
+        if Kruskal_Wallis_Pure(long_df):
+            # Get unique groups once
+            unique_groups = long_df['Group'].unique()
+            # Generate combinations and filter in one pass
+            group_comb = [(g1, g2) for g1, g2 in combinations(unique_groups, 2)
+                         if find_model(g1) == find_model(g2)]
             
-            annotator = Annotator(ax, group_comb, x=xlabel, 
-            y=ylabel, 
-            data=long_df, 
-            order=None,#reordered above
-            orient=orientation)
-            annotator.configure(test='Mann-Whitney', text_format='star', loc='inside',
-                               comparisons_correction='Bonferroni',hide_non_significant=True,
-                               text_offset=0, line_height=0.01, fontsize=13)
-            annotator.apply_and_annotate()
+            if group_comb:  # Only create annotator if there are valid combinations
+                annotator = Annotator(ax, group_comb, x=xlabel, y=ylabel, 
+                                    data=long_df, order=None, orient=orientation)
+                annotator.configure(test='Mann-Whitney', text_format='star', loc='inside',
+                                  comparisons_correction='Bonferroni', hide_non_significant=True,
+                                  text_offset=0, line_height=0.01, fontsize=13)
+                annotator.apply_and_annotate()
     
     if args.just_mean:
         # Modify individual ytick labels to remove 'Avg.-'
