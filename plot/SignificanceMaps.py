@@ -38,50 +38,50 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def rank(results,args):
-    #changes begin here
-    means={}    
-    for model in results:
-        if args.organ=='mean':
-            #means[model]=results[model]['Average'].mean()
-            try:
-                means[model]=results[model].drop(
-                    columns=['Average']).mean(numeric_only=True,axis=1).median()
-            except:
-                means[model]=results[model].mean(numeric_only=True,axis=1).median()
+def rank(results, args):
+    """Rank models by median performance, optimized for both 'mean' and specific organs.
+    
+    Uses efficient computation and avoids try-except in loop.
+    """
+    means = {}
+    
+    for model, df in results.items():
+        if args.organ == 'mean':
+            # Check once if 'Average' column exists
+            if 'Average' in df.columns:
+                means[model] = df.drop(columns=['Average']).mean(numeric_only=True, axis=1).median()
+            else:
+                means[model] = df.mean(numeric_only=True, axis=1).median()
         else:
-            means[model]=results[model][args.organ].median()
-    sorted_keys_descending = sorted(means, key=means.get, reverse=True)
-    #print(means)
-    #changes end here
+            means[model] = df[args.organ].median()
     
-    return sorted_keys_descending
+    return sorted(means, key=means.get, reverse=True)
     
-def allign(df1,df2):
-    #print(df1,df2)
-    #Step 1: Remove rows with NaN values
-    df1_clean = df1.dropna().reset_index(drop=True).drop_duplicates(subset=['name'])
-    df2_clean = df2.dropna().reset_index(drop=True).drop_duplicates(subset=['name'])
-    #print(df1_clean)
-
-    # Step 2: Find the intersection of 'name' values
-    common_names = set(df1_clean['name']).intersection(set(df2_clean['name']))
-
-    # Step 3: Subset both DataFrames to only include rows with these common 'name' values
-    df1_subset = df1_clean[df1_clean['name'].isin(common_names)].reset_index(drop=True)
-    df2_subset = df2_clean[df2_clean['name'].isin(common_names)].reset_index(drop=True)
-
-    # Step 4: Ensure that both DataFrames have the same order of rows by sorting
-    df1_subset = df1_subset.sort_values(by='name').reset_index(drop=True)
-    df2_subset = df2_subset.sort_values(by='name').reset_index(drop=True)
-
-    # Verify that both DataFrames have the same order of 'name' values
-    #print(df1_subset['name'],df2_subset['name'])
-    assert (df1_subset['name']==df2_subset['name']).all()
-    #print(df1_subset['name'],df2_subset['name'])
-    df1_subset,df2_subset=df1_subset.drop(columns=['name']),df2_subset.drop(columns=['name'])
-    #print(df1_subset,df2_subset)
-    return df1_subset,df2_subset
+def allign(df1, df2):
+    """Align two dataframes by common 'name' values, optimized for performance.
+    
+    Removes NaN values, duplicates, and sorts by 'name' to ensure proper alignment.
+    """
+    # Step 1: Remove rows with NaN values and duplicates
+    df1_clean = df1.dropna().drop_duplicates(subset=['name']).reset_index(drop=True)
+    df2_clean = df2.dropna().drop_duplicates(subset=['name']).reset_index(drop=True)
+    
+    # Step 2: Find intersection using set operations for efficiency
+    common_names = set(df1_clean['name']) & set(df2_clean['name'])
+    
+    # Step 3 & 4: Filter and sort in one operation per dataframe
+    df1_subset = (df1_clean[df1_clean['name'].isin(common_names)]
+                  .sort_values(by='name')
+                  .reset_index(drop=True))
+    df2_subset = (df2_clean[df2_clean['name'].isin(common_names)]
+                  .sort_values(by='name')
+                  .reset_index(drop=True))
+    
+    # Verify alignment
+    assert (df1_subset['name'] == df2_subset['name']).all(), "DataFrames not properly aligned"
+    
+    # Return without 'name' column
+    return df1_subset.drop(columns=['name']), df2_subset.drop(columns=['name'])
     
 def HeatmapOfSignificance(args,ax=None):
     flag=(ax is None)

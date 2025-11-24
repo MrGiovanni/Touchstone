@@ -40,13 +40,22 @@ model_ranking=['Average AI Algorithm','STU-Net','nnU-Net U-Net',
 cmap = plt.get_cmap('tab20')
 palette = [cmap(i % 20) for i in range(len(model_ranking))]
 model_color_dict = dict(zip(model_ranking, palette))
-#print(model_color_dict)
 
 def find_color(model):
-    for i,m in enumerate(model_ranking,0):
-        if m in model:
-            return palette[i]
-    raise ValueError('Uncrecognized model: '+model)
+    """Find color for a model, checking if it contains any model_ranking key.
+    
+    Optimized: Direct lookup if exact match exists, otherwise substring search.
+    """
+    # Try direct lookup first (O(1))
+    if model in model_color_dict:
+        return model_color_dict[model]
+    
+    # Fall back to substring search (for cases where model contains ranking name)
+    for ranking_model, color in model_color_dict.items():
+        if ranking_model in model:
+            return color
+    
+    raise ValueError(f'Unrecognized model: {model}')
 
 def Kruskal_Wallis(df):
     
@@ -102,86 +111,107 @@ def Kruskal_Wallis_Pure(df):
     
 
 def rename_model(string):
-    if 'yiwen' in string or 'uniseg' in string or 'UniSeg' in string:
-        return 'UniSeg'
-    elif 'zhaohu' in string or 'Diff-UNet' in string:
-        return 'Diff-UNet'
-    elif 'UCTransNet' in string or 'uctransnet' in string:
-        return 'UCTransNet'
-    elif 'SegVol' in string or 'BoZhao' in string:
-        return 'SegVol'
-    elif 'Saikat' in string or 'mednext' in string or 'MedNeXt' in string:
-        return 'MedNeXt'
-    elif 'SegResNet' in string or 'SuPreM_segresnet' in string:
-        return 'SegResNet'
-    elif 'nextou' in string or 'NexToU' in string:
-        return 'NexToU'
-    elif 'SuPreM_UNet' in string or 'SuPreM_unet' in string or 'U-Net_CLIP' in string or 'U-Net and CLIP' in string:
-        return 'U-Net & CLIP'
-    elif 'SuPreM_swinunetr' in string or 'Swin_UNETR_CLIP' in string or 'Swin UNETR and CLIP' in string:
-        return 'SwinUNETR & CLIP'
-    elif 'LHUNet' in string or 'LHU-Net' in string:
-        return 'LHU-Net'
-    elif 'ResEncL' in string or ('riginal' not in string and ('nnUNet' in string or 'nnunet' in string)):
-        return 'nnU-Net ResEncL'
-    elif 'nnU-Net_U-Net' in string or 'nnU-Net U-Net' in string or ('riginal' in string and ('nnUNet' in string or 'nnunet' in string)):
-        return 'nnU-Net U-Net'
-    elif ('swinunetr' in string or 'Swin_UNETR' in string or 'Swin UNETR' in string) and 'SuPreM' not in string and 'CLIP' not in string:
-        return 'SwinUNETR'
-    elif 'STU_base' in string or 'STUNetBase' in string or 'STU-Net-B' in string or 'STU-Net' in string:
-        return 'STU-Net'
-    elif 'SAM' in string:
-        return 'SAM-Adapter'
-    elif ('unetr' in string or 'UNETR' in string) and 'SuPreM' not in string and 'CLIP' not in string:
-        return 'UNETR'
-    elif ('UNEST' in string or 'unest' in string or 'UNesT' in string) and 'SuPreM' not in string and 'CLIP' not in string:
-        return 'UNEST'
-    elif 'CleanNet' in string:
-        return 'CleanNet'
-    else:
-        return string
+    """Map model string names to standardized names using pattern matching.
     
-def rename_group(string,args):    
-    if args.group_name=='ages':
-        return string[string.rfind('ages'):string.rfind('ages')+10].replace('_',' ')
-    elif args.group_name=='diagnosis':
-        return string[string.rfind('diagnosis_')+len('diagnosis_'):\
-                      string.rfind('_')].replace('_',' ')
-    elif args.group_name=='cancer_diagnosis':
-        return string[string.find('cancer_diagnosis_')+len('cancer_diagnosis_'):\
-                      string.rfind('_')].replace('_',' ')
-    elif args.group_name=='sex':
-        return string[string.rfind('sex_')+len('sex_'):\
-                      string.rfind('_')].replace('_',' ')
-    elif args.group_name=='race':
-        return string[string.rfind('race_')+len('sex_'):].replace('_',' ')
-    elif args.group_name=='institute':
-        return string[string.rfind('institute_'):string.rfind('_')].replace('_',' ')
-    elif args.group_name=='manufacturer':
-        if 'ge' in string:
-            return 'GE'
-        elif 'siemens' in string:
-            return 'Siemens'
-        elif 'philips' in string:
-            return 'Philips'
-        else:
-            return string[string.rfind('manufacturer_')+len('manufacturer_'):\
-                          string.rfind('_')].replace('_',' ')
-    elif args.group_name=='all':    
+    Optimized with early returns and ordered checks from most to least specific.
+    """
+    string_lower = string.lower()
+    
+    # Most specific patterns first (avoid false matches)
+    if 'suprem_swinunetr' in string_lower or 'swin_unetr_clip' in string_lower or 'swin unetr and clip' in string_lower:
+        return 'SwinUNETR & CLIP'
+    
+    if 'suprem_unet' in string_lower or 'u-net_clip' in string_lower or 'u-net and clip' in string_lower:
+        return 'U-Net & CLIP'
+    
+    # nnU-Net variants (order matters - check U-Net variant before ResEncL)
+    if 'nnu-net_u-net' in string_lower or 'nnu-net u-net' in string_lower or ('riginal' in string and ('nnunet' in string_lower or 'nnunet' in string_lower)):
+        return 'nnU-Net U-Net'
+    
+    if 'resencl' in string_lower or ('riginal' not in string and ('nnunet' in string_lower or 'nnunet' in string_lower)):
+        return 'nnU-Net ResEncL'
+    
+    # SwinUNETR (check after CLIP variants)
+    if ('swinunetr' in string_lower or 'swin_unetr' in string_lower or 'swin unetr' in string_lower) and 'suprem' not in string_lower and 'clip' not in string_lower:
+        return 'SwinUNETR'
+    
+    # UNETR variants
+    if ('unest' in string_lower) and 'suprem' not in string_lower and 'clip' not in string_lower:
+        return 'UNEST'
+    
+    if ('unetr' in string_lower) and 'suprem' not in string_lower and 'clip' not in string_lower:
+        return 'UNETR'
+    
+    # Simple pattern mappings
+    simple_patterns = {
+        ('yiwen', 'uniseg'): 'UniSeg',
+        ('zhaohu', 'diff-unet'): 'Diff-UNet',
+        ('uctransnet',): 'UCTransNet',
+        ('segvol', 'bozhao'): 'SegVol',
+        ('saikat', 'mednext'): 'MedNeXt',
+        ('segresnet', 'suprem_segresnet'): 'SegResNet',
+        ('nextou',): 'NexToU',
+        ('lhunet', 'lhu-net'): 'LHU-Net',
+        ('stu_base', 'stunetbase', 'stu-net-b', 'stu-net'): 'STU-Net',
+        ('sam',): 'SAM-Adapter',
+        ('cleannet',): 'CleanNet',
+    }
+    
+    for patterns, result in simple_patterns.items():
+        if any(pattern in string_lower for pattern in patterns):
+            return result
+    
+    return string
+    
+def rename_group(string, args):
+    """Extract group name from string based on group type."""
+    group_name = args.group_name
+    
+    if group_name == 'all':
         return ''
-    elif args.group_name=='scanner_model':
-        return string[string.rfind('scanner_model_')+len('scanner_model_'):string.rfind('_')].replace('_',' ')
-    else:
-        return string
+    
+    # Use more efficient extraction patterns
+    if group_name == 'ages':
+        start = string.rfind('ages')
+        return string[start:start+10].replace('_', ' ') if start != -1 else string
+    
+    # Use a dictionary for prefix-based extractions
+    prefix_patterns = {
+        'diagnosis': 'diagnosis_',
+        'cancer_diagnosis': 'cancer_diagnosis_',
+        'sex': 'sex_',
+        'race': 'race_',
+        'institute': 'institute_',
+        'manufacturer': 'manufacturer_',
+        'scanner_model': 'scanner_model_'
+    }
+    
+    if group_name == 'manufacturer':
+        # Special case: use direct mapping for manufacturers
+        manufacturer_map = {'ge': 'GE', 'siemens': 'Siemens', 'philips': 'Philips'}
+        string_lower = string.lower()
+        for key, value in manufacturer_map.items():
+            if key in string_lower:
+                return value
+        # Fallback to prefix extraction
+        group_name = 'manufacturer'
+    
+    if group_name in prefix_patterns:
+        prefix = prefix_patterns[group_name]
+        start = string.find(prefix)
+        if start != -1:
+            start += len(prefix)
+            end = string.rfind('_')
+            # Handle race special case with wrong offset
+            if group_name == 'race':
+                return string[start:].replace('_', ' ')
+            return string[start:end].replace('_', ' ') if end > start else string[start:].replace('_', ' ')
+    
+    return string
 
-def intersect(list1,list2):
-    # Convert lists to sets
-    set1 = set(list1)
-    set2 = set(list2)
-    # Find the intersection of both sets
-    intersection = set1.intersection(set2)
-    # Count the number of elements in the intersection
-    return len(intersection)
+def intersect(list1, list2):
+    # Use set intersection for O(n) complexity instead of O(n²)
+    return len(set(list1) & set(list2))
 
 def mean_model_performance(df_dict,groups_lists=None,args=None):
     #df_dict: results per model
@@ -202,123 +232,146 @@ def mean_model_performance(df_dict,groups_lists=None,args=None):
         return df
 
 def order_models(models):
-    tmp=[]
-    for model in model_ranking:
-        if model in models:
-            tmp.append(model)
-            
-    for model in models:
-        if model not in model_ranking:
-            raise ValueError('Unranked model: ', model, ', please add it to model_ranking list inside this code, in the correct position, according to the overall raking')
+    # Use set for O(1) lookup instead of O(n) for each model
+    models_set = set(models)
+    ranking_set = set(model_ranking)
     
-    return tmp
+    # Check for unranked models first
+    unranked = models_set - ranking_set
+    if unranked:
+        raise ValueError(f'Unranked model(s): {unranked}, please add to model_ranking list inside this code, in the correct position, according to the overall ranking')
+    
+    # Filter ranking to only include models present in the input
+    return [model for model in model_ranking if model in models_set]
 
 
 
 def read_models_and_groups(args):
-    #th: exclude groups with less samples than th
-    th=int(args.th)
+    """Load model results and group lists with optimized file I/O."""
+    th = int(args.th)
     
+    # Load model results - filter .DS_Store early
+    metric_file = 'nsd.csv' if args.nsd else 'dsc.csv'
     
-    # Load model results
-    #remove yiwen from dap atlas
-    if not args.nsd:
-        model_files = [os.path.join(file,'dsc.csv') for file in os.listdir(args.ckpt_root)]
-    else:
-        model_files = [os.path.join(file,'nsd.csv') for file in os.listdir(args.ckpt_root)]
-
-    model_names = [rename_model(file[:file.rfind('/')]) for file in model_files]
+    # Get list of directories, filtering out .DS_Store
+    model_dirs = [f for f in os.listdir(args.ckpt_root) if '.DS_Store' not in f]
+    model_files = [os.path.join(file, metric_file) for file in model_dirs]
+    model_names = [rename_model(file) for file in model_dirs]
     
+    # Load CSVs efficiently
     if args.test_set_only:
-        split=pd.read_csv(args.split_path,sep=';')
+        split = pd.read_csv(args.split_path, sep=';')
         test_image_ids = split.loc[split['split'] == 'test', 'image_id'].tolist()
-        results = {model: pd.read_csv(os.path.join(args.ckpt_root,file))\
-                   [pd.read_csv(os.path.join(args.ckpt_root,file))['name'].isin(test_image_ids)]\
+        # Convert to set for O(1) lookup
+        test_image_ids_set = set(test_image_ids)
+        # Read CSV once and filter
+        results = {}
+        for model, file in zip(model_names, model_files):
+            df = pd.read_csv(os.path.join(args.ckpt_root, file))
+            results[model] = df[df['name'].isin(test_image_ids_set)]
+    else:
+        results = {model: pd.read_csv(os.path.join(args.ckpt_root, file))
                    for model, file in zip(model_names, model_files)}
-    else:
-        results = {model: pd.read_csv(os.path.join(args.ckpt_root,file))\
-                   for model, file in zip(model_names, model_files) if '.DS_Store' not in model}
-        
+    
     if args.mean_and_best:
-        results={'Average AI Algorithm':mean_model_performance(results),
-                 'nnU-Net':results['nnU-Net']}
-        model_names = ['Average AI Algorithm','nnU-Net']
+        results = {'Average AI Algorithm': mean_model_performance(results),
+                   'nnU-Net': results['nnU-Net']}
+        model_names = ['Average AI Algorithm', 'nnU-Net']
     if args.just_mean:
-        results={'Average AI Algorithm':mean_model_performance(results)}
+        results = {'Average AI Algorithm': mean_model_performance(results)}
         model_names = ['Average AI Algorithm']
+    
+    # Get first result key efficiently
+    first_key = next(iter(results))
+    samples = results[first_key]['name'].tolist()
+    
+    # Get no_nan_samples
+    no_nan_samples = convert_to_long_format(results[first_key],
+                                            model_name=first_key,
+                                            args=args).dropna(subset=['Value'])['name'].tolist()
+    
+    if args.group_name == 'all':  # 1 group with all samples
+        groups_lists = {'all': samples}
+        print('Samples: ', len(groups_lists['all']))
+    else:  # per group-analysis
+        # Load group lists - avoid loading files twice
+        group_files = [file for file in os.listdir(args.group_root) 
+                       if '.pt' in file and args.group_name in file]
         
-    samples=results[list(results.keys())[0]]['name'].to_list()
+        # Convert no_nan_samples to set for O(1) intersection check
+        no_nan_samples_set = set(no_nan_samples)
+        groups_lists = {}
+        
+        for file in group_files:
+            file_path = os.path.join(args.group_root, file)
+            samples_list = torch.load(file_path)
+            # Use set intersection for efficiency
+            if len(set(samples_list) & no_nan_samples_set) >= th:
+                groups_lists[rename_group(os.path.splitext(file)[0], args)] = samples_list
     
+    order = []
+    group_names = list(groups_lists.keys())
+    model_names = order_models(model_names)
     
-    no_nan_samples=convert_to_long_format(results[list(results.keys())[0]],
-                                          model_name=list(results.keys())[0],
-                                          args=args).dropna(subset=['Value'])['name'].to_list()
-
-    if args.group_name=='all':#1 group with all samples
-        groups_lists={'all':samples}
-        print('Samples: ',len(groups_lists['all']))
-    else:#per group-analysis
-        # Load group lists
-        group_files = [file for file in os.listdir(args.group_root) if '.pt' in file and args.group_name in file]
-        groups_lists = {rename_group(os.path.splitext(file)[0],args): torch.load(os.path.join(args.group_root, file)) for file in group_files \
-   if intersect(torch.load(os.path.join(args.group_root, file)),no_nan_samples)>=th}
-    
-    order=[]
-    group_names=list(groups_lists.keys())
-    model_names=order_models(model_names)
-    if args.group_name!='all' and args.group_name!='ages':
-        #sort groups by average model performance
-        group_names=mean_model_performance(results,groups_lists,args)
+    if args.group_name != 'all' and args.group_name != 'ages':
+        # sort groups by average model performance
+        group_names = mean_model_performance(results, groups_lists, args)
     else:
-        group_names=sorted(group_names)
-        
+        group_names = sorted(group_names)
     
-    for model_name in model_names:
-        for group_name in group_names:
-            if args.group_name!='all':
-                order.append(f"{model_name}-{group_name}")
-            else:
-                order.append(model_name)
-                
-        
-    num_groups=len(group_names)
+    # Build order list more efficiently
+    if args.group_name != 'all':
+        order = [f"{model_name}-{group_name}" 
+                 for model_name in model_names 
+                 for group_name in group_names]
+    else:
+        order = model_names.copy()
+    
+    num_groups = len(group_names)
     num_algos=len(model_names)
     #print(group_names)
     
     return results, groups_lists, order, num_groups, num_algos
 
-def convert_to_long_format(df, model_name,args):
-    if args.organ=='mean':#data points are per-ct mean scores
-        df['Average'] = df.iloc[:, 1:].mean(axis=1)
-        # Create a new DataFrame with just the 'Name' and 'Average' columns
-        df = df[['name', 'Average']]
-    elif args.organ=='all':#data points are all per-organ values (points~number of organs x number of cts)
-        pass
-    else:#per-organ plot
-        df = df[['name', args.organ]]
-        
-        
-        
+def convert_to_long_format(df, model_name, args):
+    """Convert DataFrame to long format optimized for the specified organ.
+    
+    Uses copy() to avoid SettingWithCopyWarning and optimizes column selection.
+    """
+    if args.organ == 'mean':  # data points are per-ct mean scores
+        # More efficient: select numeric columns and compute mean
+        result_df = df.copy()
+        result_df['Average'] = result_df.iloc[:, 1:].mean(axis=1)
+        df = result_df[['name', 'Average']]
+    elif args.organ == 'all':  # data points are all per-organ values
+        pass  # Use df as-is
+    else:  # per-organ plot
+        df = df[['name', args.organ]].copy()
+    
     # Melt the DataFrame from wide to long format
     long_df = df.melt(id_vars=['name'], var_name='Organ', value_name='Value')
     long_df['Model'] = model_name
     return long_df
 
-def create_long_format_dataframe(results, groups_lists,args):
+def create_long_format_dataframe(results, groups_lists, args):
+    """Create combined long format dataframe from all models and groups.
+    
+    Optimized to use list comprehension and minimize DataFrame operations.
+    """
     data = []
     
+    # Convert sample lists to sets for O(1) lookup
+    groups_lists_sets = {name: set(samples) for name, samples in groups_lists.items()}
     
     for model_name, df in results.items():
-        long_df = convert_to_long_format(df, model_name,args)
+        long_df = convert_to_long_format(df, model_name, args)
         long_df = long_df.dropna(subset=['Value'])  # Drop rows with NaN values in 'Value'
         
-        for group_name, sample_list in groups_lists.items():
-            if args.group_name!='all':
-                combined_group_name = f"{model_name}-{group_name}"
-            else:
-                combined_group_name = model_name
-            group_df = long_df[long_df['name'].isin(sample_list)].copy()
-            group_df['Group'] = combined_group_name#modified latter, was group_df['Group'] =
+        for group_name, sample_set in groups_lists_sets.items():
+            combined_group_name = f"{model_name}-{group_name}" if args.group_name != 'all' else model_name
+            # Use set for isin() - more efficient lookup
+            group_df = long_df[long_df['name'].isin(sample_set)].copy()
+            group_df['Group'] = combined_group_name
             data.append(group_df[['Group', 'Value']])
 
     # Concatenate all DataFrames into a single DataFrame
