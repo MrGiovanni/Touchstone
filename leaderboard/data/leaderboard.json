@@ -7,7 +7,8 @@
     "test_hospitals": 11,
     "organs": 9,
     "algorithms": 19,
-    "teams": 14
+    "teams": 14,
+    "algorithms_ranked": 17
   },
   "organs": [
     "Aorta",
@@ -175,7 +176,7 @@
       "model": "UCTransNet",
       "organization": "Northeastern University",
       "average_dsc": "81.1",
-      "paper": "https://arxiv.org/pdf/2109.04335",
+      "paper": "https://arxiv.org/abs/2109.04335",
       "code": "https://github.com/McGregorWwww/UCTransNet",
       "parameters": "68.0M",
       "inference_speed": "\u2605\u2605\u2605\u2605\u2606",
@@ -873,31 +874,31 @@
       "rank": "12"
     },
     {
-      "model": "SAM-Adapter",
-      "organ": "Liver",
-      "metric": "DSC",
-      "value": 94.1,
-      "rank": "13"
-    },
-    {
       "model": "UNesT",
       "organ": "Liver",
       "metric": "DSC",
       "value": 95.3,
-      "rank": "14"
+      "rank": "13"
     },
     {
       "model": "Swin UNETR",
       "organ": "Liver",
       "metric": "DSC",
       "value": 95.2,
-      "rank": "15"
+      "rank": "14"
     },
     {
       "model": "UNETR",
       "organ": "Liver",
       "metric": "DSC",
       "value": 95.0,
+      "rank": "15"
+    },
+    {
+      "model": "SAM-Adapter",
+      "organ": "Liver",
+      "metric": "DSC",
+      "value": 94.1,
       "rank": "16"
     },
     {
@@ -1202,17 +1203,17 @@
       "rank": "8"
     },
     {
-      "model": "SegVol",
-      "organ": "Spleen",
-      "metric": "DSC",
-      "value": 94.5,
-      "rank": "9"
-    },
-    {
       "model": "NexToU",
       "organ": "Spleen",
       "metric": "DSC",
       "value": 94.7,
+      "rank": "9"
+    },
+    {
+      "model": "SegVol",
+      "organ": "Spleen",
+      "metric": "DSC",
+      "value": 94.5,
       "rank": "10"
     },
     {

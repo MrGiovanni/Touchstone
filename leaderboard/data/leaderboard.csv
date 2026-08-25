@@ -96,10 +96,10 @@ U-Net & CLIP,Liver,DSC,96.0,9
 SegVol,Liver,DSC,96.0,10
 Swin UNETR & CLIP,Liver,DSC,95.8,11
 NexToU,Liver,DSC,95.7,12
-SAM-Adapter,Liver,DSC,94.1,13
-UNesT,Liver,DSC,95.3,14
-Swin UNETR,Liver,DSC,95.2,15
-UNETR,Liver,DSC,95.0,16
+UNesT,Liver,DSC,95.3,13
+Swin UNETR,Liver,DSC,95.2,14
+UNETR,Liver,DSC,95.0,15
+SAM-Adapter,Liver,DSC,94.1,16
 UCTransNet,Liver,DSC,93.6,17
 MedNeXt,Pancreas,DSC,83.3,🏆
 STU-Net-B,Pancreas,DSC,83.2,2
@@ -143,8 +143,8 @@ STU-Net-B,Spleen,DSC,95.1,5
 Diff-UNet,Spleen,DSC,95.0,6
 LHU-Net,Spleen,DSC,94.9,7
 UniSeg,Spleen,DSC,94.9,8
-SegVol,Spleen,DSC,94.5,9
-NexToU,Spleen,DSC,94.7,10
+NexToU,Spleen,DSC,94.7,9
+SegVol,Spleen,DSC,94.5,10
 U-Net & CLIP,Spleen,DSC,94.3,11
 Swin UNETR & CLIP,Spleen,DSC,94.1,12
 UNesT,Spleen,DSC,93.2,13

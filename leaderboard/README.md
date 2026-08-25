@@ -28,7 +28,7 @@ Figures below are from the paper and are the authoritative ones.
 | Training | 5,195 CT volumes, 76 hospitals |
 | Testing | 5,903 CT volumes, 11 additional hospitals |
 | Structures | 9 abdominal organs |
-| Algorithms | 19, from 14 research teams |
+| Algorithms | 19 benchmarked in the paper, from 14 research teams; **17 ranked on this page** (STU-Net-H and STU-Net-L have result files but no published DSC row) |
 | Metric | Dice Similarity Coefficient (DSC) |
 
 ## Publishing the page

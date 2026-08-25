@@ -60,7 +60,7 @@ NeurIPS 2024 <br/>
 | 13 | UNesT | NVIDIA | 84.9 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 14 | Swin UNETR | NVIDIA | 84.8 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 15 | UNETR | NVIDIA| 83.3 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 16 | UCTransNet | Northeastern University | 81.1 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 16 | UCTransNet | Northeastern University | 81.1 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 | 17 | SAM-Adapter | Duke | 73.4 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
 
 
@@ -70,7 +70,7 @@ NeurIPS 2024 <br/>
 
 | rank | model  | organization | DSC | paper | github |
 |:---|:---|:---|:---:|:---:|:---:|
-| 🏆 | UCTransNet | Northeastern University | 86.5 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 🏆 | UCTransNet | Northeastern University | 86.5 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 | 🏆 | NexToU | HIT | 86.4 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/pdf/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
 | 3 | MedNeXt | DKFZ | 83.1 | [![arXiv](https://img.shields.io/badge/arXiv-2303.09975-b31b1b.svg)](https://arxiv.org/pdf/2303.09975) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/MedNeXt.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/MedNeXt) |
 | 4 | nnU-Net U-Net | DKFZ | 82.8 | [![arXiv](https://img.shields.io/badge/arXiv-1809.10486-b31b1b.svg)](https://arxiv.org/abs/1809.10486) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/nnUNet.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/nnUNet) |
@@ -110,7 +110,7 @@ NeurIPS 2024 <br/>
 | 10 | U-Net & CLIP | CityU | 82.1 | [![arXiv](https://img.shields.io/badge/arXiv-2301.00785-b31b1b.svg)](https://arxiv.org/abs/2301.00785) | [![GitHub stars](https://img.shields.io/github/stars/ljwztc/CLIP-Driven-Universal-Model.svg?logo=github&label=Stars)](https://github.com/ljwztc/CLIP-Driven-Universal-Model) |
 | 11 | Swin UNETR & CLIP | CityU | 80.2 | [![arXiv](https://img.shields.io/badge/arXiv-2301.00785-b31b1b.svg)](https://arxiv.org/abs/2301.00785) | [![GitHub stars](https://img.shields.io/github/stars/ljwztc/CLIP-Driven-Universal-Model.svg?logo=github&label=Stars)](https://github.com/ljwztc/CLIP-Driven-Universal-Model) |
 | 12 | SegVol | BAAI | 79.3 | [![arXiv](https://img.shields.io/badge/arXiv-2311.13385-b31b1b.svg)](https://arxiv.org/abs/2311.13385) | [![GitHub stars](https://img.shields.io/github/stars/BAAI-DCAI/SegVol.svg?logo=github&label=Stars)](https://github.com/BAAI-DCAI/SegVol) |
-| 13 | UCTransNet | Northeastern University | 77.8 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 13 | UCTransNet | Northeastern University | 77.8 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 | 14 | Swin UNETR | NVIDIA | 76.9 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 15 | UNesT | NVIDIA | 75.1 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 16 | UNETR | NVIDIA | 74.7 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
@@ -143,7 +143,7 @@ NeurIPS 2024 <br/>
 | 14 | NexToU | HIT | 89.6 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/abs/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
 | 15 | UNETR | NVIDIA | 89.2 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 16 | SAM-Adapter | Duke | 87.3 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
-| 17 | UCTransNet | Northeastern University | 86.9 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 17 | UCTransNet | Northeastern University | 86.9 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
                                                                                                       
 </div>
 </details>
@@ -170,7 +170,7 @@ NeurIPS 2024 <br/>
 | 14 | NexToU | HIT | 90.1 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/abs/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
 | 15 | UNETR | NVIDIA | 90.1 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 16 | Swin UNETR | NVIDIA | 89.8 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 17 | UCTransNet | Northeastern University | 86.5 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 17 | UCTransNet | Northeastern University | 86.5 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 
 </div>
 </details>
@@ -193,11 +193,11 @@ NeurIPS 2024 <br/>
 | 10 | SegVol | BAAI | 96.0 | [![arXiv](https://img.shields.io/badge/arXiv-2311.13385-b31b1b.svg)](https://arxiv.org/abs/2311.13385) | [![GitHub stars](https://img.shields.io/github/stars/BAAI-DCAI/SegVol.svg?logo=github&label=Stars)](https://github.com/BAAI-DCAI/SegVol) |
 | 11 | Swin UNETR & CLIP | CityU | 95.8 | [![arXiv](https://img.shields.io/badge/arXiv-2301.00785-b31b1b.svg)](https://arxiv.org/abs/2301.00785) | [![GitHub stars](https://img.shields.io/github/stars/ljwztc/CLIP-Driven-Universal-Model.svg?logo=github&label=Stars)](https://github.com/ljwztc/CLIP-Driven-Universal-Model) |
 | 12 | NexToU | HIT | 95.7 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/abs/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
-| 13 | SAM-Adapter | Duke | 94.1 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
-| 14 | UNesT | NVIDIA | 95.3 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 15 | Swin UNETR | NVIDIA | 95.2 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 16 | UNETR | NVIDIA | 95.0 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 17 | UCTransNet | Northeastern University | 93.6 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 13 | UNesT | NVIDIA | 95.3 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
+| 14 | Swin UNETR | NVIDIA | 95.2 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
+| 15 | UNETR | NVIDIA | 95.0 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
+| 16 | SAM-Adapter | Duke | 94.1 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
+| 17 | UCTransNet | Northeastern University | 93.6 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 
 </div>
 </details>
@@ -223,7 +223,7 @@ NeurIPS 2024 <br/>
 | 13 | UNesT | NVIDIA | 76.2 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 14 | Swin UNETR | NVIDIA | 75.6 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 15 | UNETR | NVIDIA | 72.3 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 16 | UCTransNet | Northeastern University | 59.0 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 16 | UCTransNet | Northeastern University | 59.0 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 | 17 | SAM-Adapter | Duke | 50.2 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
 
 
@@ -251,7 +251,7 @@ NeurIPS 2024 <br/>
 | 13 | Swin UNETR | NVIDIA | 75.4 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 14 | UNesT | NVIDIA | 74.4 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 15 | UNETR | NVIDIA | 71.5 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
-| 15 | UCTransNet | Northeastern University | 68.1 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 15 | UCTransNet | Northeastern University | 68.1 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 | 17 | SAM-Adapter | Duke | 48.0 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
 
 
@@ -274,15 +274,15 @@ NeurIPS 2024 <br/>
 | 6 | Diff-UNet | HKUST | 95.0 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10326-b31b1b.svg)](https://arxiv.org/abs/2303.10326) | [![GitHub stars](https://img.shields.io/github/stars/ge-xing/Diff-UNet.svg?logo=github&label=Stars)](https://github.com/ge-xing/Diff-UNet) |
 | 7 | LHU-Net | UR | 94.9 | [![arXiv](https://img.shields.io/badge/arXiv-2404.05102-b31b1b.svg)](https://arxiv.org/abs/2404.05102) | [![GitHub stars](https://img.shields.io/github/stars/xmindflow/LHUNet.svg?logo=github&label=Stars)](https://github.com/xmindflow/LHUNet) |
 | 8 | UniSeg | NPU | 94.9 | [![arXiv](https://img.shields.io/badge/arXiv-2304.03493-b31b1b.svg)](https://arxiv.org/abs/2304.03493) | [![GitHub stars](https://img.shields.io/github/stars/yeerwen/UniSeg.svg?logo=github&label=Stars)](https://github.com/yeerwen/UniSeg) |
-| 9 | SegVol | BAAI | 94.5 | [![arXiv](https://img.shields.io/badge/arXiv-2311.13385-b31b1b.svg)](https://arxiv.org/abs/2311.13385) | [![GitHub stars](https://img.shields.io/github/stars/BAAI-DCAI/SegVol.svg?logo=github&label=Stars)](https://github.com/BAAI-DCAI/SegVol) |
-| 10 | NexToU | HIT | 94.7 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/abs/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
+| 9 | NexToU | HIT | 94.7 | [![arXiv](https://img.shields.io/badge/arXiv-2305.15911-b31b1b.svg)](https://arxiv.org/abs/2305.15911) | [![GitHub stars](https://img.shields.io/github/stars/PengchengShi1220/NexToU.svg?logo=github&label=Stars)](https://github.com/PengchengShi1220/NexToU) |
+| 10 | SegVol | BAAI | 94.5 | [![arXiv](https://img.shields.io/badge/arXiv-2311.13385-b31b1b.svg)](https://arxiv.org/abs/2311.13385) | [![GitHub stars](https://img.shields.io/github/stars/BAAI-DCAI/SegVol.svg?logo=github&label=Stars)](https://github.com/BAAI-DCAI/SegVol) |
 | 11 | U-Net & CLIP | CityU | 94.3 | [![arXiv](https://img.shields.io/badge/arXiv-2301.00785-b31b1b.svg)](https://arxiv.org/abs/2301.00785) | [![GitHub stars](https://img.shields.io/github/stars/ljwztc/CLIP-Driven-Universal-Model.svg?logo=github&label=Stars)](https://github.com/ljwztc/CLIP-Driven-Universal-Model) |
 | 12 | Swin UNETR & CLIP | CityU | 94.1 | [![arXiv](https://img.shields.io/badge/arXiv-2301.00785-b31b1b.svg)](https://arxiv.org/abs/2301.00785) | [![GitHub stars](https://img.shields.io/github/stars/ljwztc/CLIP-Driven-Universal-Model.svg?logo=github&label=Stars)](https://github.com/ljwztc/CLIP-Driven-Universal-Model) |
 | 13 | UNesT | NVIDIA | 93.2 | [![arXiv](https://img.shields.io/badge/arXiv-2303.10745-b31b1b.svg)](https://arxiv.org/abs/2303.10745) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 14 | Swin UNETR | NVIDIA | 92.7 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 15 | UNETR | NVIDIA | 91.7 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 16 | SAM-Adapter | Duke | 90.5 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
-| 17 | UCTransNet | Northeastern University | 90.2 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 17 | UCTransNet | Northeastern University | 90.2 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 
 
 </div>
@@ -310,7 +310,7 @@ NeurIPS 2024 <br/>
 | 14 | Swin UNETR | NVIDIA | 90.5 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)](https://arxiv.org/abs/2211.11537) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 15 | UNETR | NVIDIA | 88.8 | [![arXiv](https://img.shields.io/badge/arXiv-2111.04004-b31b1b.svg)](https://arxiv.org/abs/2111.04004) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)](https://github.com/Project-MONAI/tutorials) |
 | 16 | SAM-Adapter | Duke | 88.0 | [![arXiv](https://img.shields.io/badge/arXiv-2404.09957-b31b1b.svg)](https://arxiv.org/abs/2404.09957) | [![GitHub stars](https://img.shields.io/github/stars/mazurowski-lab/finetune-SAM.svg?logo=github&label=Stars)](https://github.com/mazurowski-lab/finetune-SAM) |
-| 17 | UCTransNet | Northeastern University | 81.9 | [![arXiv](https://img.shields.io/badge/arXiv-2211.11537-b31b1b.svg)]([https://arxiv.org/abs/2211.11537](https://arxiv.org/pdf/2109.04335)) | [![GitHub stars](https://img.shields.io/github/stars/Project-MONAI/tutorials.svg?logo=github&label=Stars)]([https://github.com/McGregorWwww/UCTransNet](https://github.com/McGregorWwww/UCTransNet)) |
+| 17 | UCTransNet | Northeastern University | 81.9 | [![arXiv](https://img.shields.io/badge/arXiv-2109.04335-b31b1b.svg)](https://arxiv.org/abs/2109.04335) | [![GitHub stars](https://img.shields.io/github/stars/McGregorWwww/UCTransNet.svg?logo=github&label=Stars)](https://github.com/McGregorWwww/UCTransNet) |
 
 
 </div>
@@ -324,8 +324,8 @@ NeurIPS 2024 <br/>
 
 ### Test set 
 
-- Proprietary [JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) (*N*=5,172)
-- Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=1,228)
+- Proprietary [JHH dataset](https://www.sciencedirect.com/science/article/pii/S2211568419301391) (*N*=5,160)
+- Public [TotalSegmentator V2](https://github.com/wasserth/TotalSegmentator) dataset (*N*=743)
 
 <div align="center">
   <img src="utils/fig_metadata.png" alt="metadata" width="100%">
@@ -456,7 +456,7 @@ jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=touc
 The csv results files in totalsegmentator_results/ and dapatlas_results/ contain per-sample dsc and nsd scores. Rich meatdata for each one of those samples (sex, age, scanner, diagnosis,...) are available in metaTotalSeg.csv and 'Clinical Metadata FDG PET_CT Lesions.csv', for TotalSegmentator and DAP Atlas, respectively. The code in TotalSegmentatorMetadata.ipynb and DAPAtlasMetadata.ipynb extracts this meatdata into simplfied group lists (e.g., a list of all samples representing male patients), and saves these lists in the folders plotsTotalSegmentator/ and plotsDAPAtlas/. You can modify the code to generate custom sample lists (e.g., all men aged 30-35). To compare a set of groups, the filenames of all lists in the set should begin with the same name. For example, comp1_list_a.pt, comp1_list_b.pt, comp1_list_C.pt can represent a set of 3 groups. Then, PlotGroup.py can draw boxplots and perform statistical tests comparing the AI algorithm's results (dsc and nsd) for the samples inside the different custom lists you created. In our example, you just just need to specify --group_name comp1 when running PlotGroup.py:
 
 ```bash
-python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root outputs/plotsTotalSegmentator/ --group_name comp1 --organ liver --stats
+python plot/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root outputs/plotsTotalSegmentator/ --group_name comp1 --organ liver --stats
 ```
 
 </div>
@@ -469,11 +469,14 @@ python utils/PlotGroup.py --ckpt_root totalsegmentator_results/ --group_root out
 Please cite the following papers if you find our study helpful.
 
 ```
-@article{bassi2024touchstone,
+@inproceedings{bassi2024touchstone,
   title={Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?},
   author={Bassi, Pedro RAS and Li, Wenxuan and Tang, Yucheng and Isensee, Fabian and Wang, Zifu and Chen, Jieneng and Chou, Yu-Cheng and Kirchhoff, Yannick and Rokuss, Maximilian and Huang, Ziyan and Ye, Jin and He, Junjun and Wald, Tassilo and Ulrich, Constantin and Baumgartner, Michael and Roy, Saikat and Maier-Hein, Klaus H. and Jaeger, Paul and Ye, Yiwen and Xie, Yutong and Zhang, Jianpeng and Chen, Ziyang and Xia, Yong and Xing, Zhaohu and Zhu, Lei and Sadegheih, Yousef and Bozorgpour, Afshin and Kumari, Pratibha and Azad, Reza and Merhof, Dorit and Shi, Pengcheng and Ma, Ting and Du, Yuxin and Bai, Fan and Huang, Tiejun and Zhao, Bo and Wang, Haonan and Li, Xiaomeng and Gu, Hanxue and Dong, Haoyu and Yang, Jichen and Mazurowski, Maciej A. and Gupta, Saumya and Wu, Linshan and Zhuang, Jiaxin and Chen, Hao and Roth, Holger and Xu, Daguang and Blaschko, Matthew B. and Decherchi, Sergio and Cavalli, Andrea and Yuille, Alan L. and Zhou, Zongwei},
-  journal={Conference on Neural Information Processing Systems},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={15184--15201},
   year={2024},
+  doi={10.52202/079017-0485},
   url={https://github.com/MrGiovanni/Touchstone}
 }
 

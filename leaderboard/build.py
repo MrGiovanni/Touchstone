@@ -33,6 +33,11 @@ FACTS = {
     "train_volumes": 5195, "train_hospitals": 76,
     "test_volumes": 5903, "test_hospitals": 11,
     "organs": 9, "algorithms": 19, "teams": 14,
+    # The paper benchmarks 19 algorithms from 14 teams. The README's leaderboard tables
+    # publish DSC for 17 of them; STU-Net-H and STU-Net-L have result files under
+    # totalsegmentator_results/ but no ranked row, so they are absent here. `ranked`
+    # is what this page actually shows -- keep the two in step.
+    "algorithms_ranked": 17,
 }
 ORGANS = ["Aorta", "Gallbladder", "KidneyL", "KidneyR", "Liver",
           "Pancreas", "Postcava", "Spleen", "Stomach"]
@@ -172,7 +177,7 @@ def render(payload):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Touchstone Benchmark Leaderboard</title>
 <meta name="description" content="Touchstone 1.0: a large-scale benchmark for
-medical image segmentation. """ + str(f["algorithms"]) + """ AI algorithms from """ + str(f["teams"]) + """ teams,
+medical image segmentation. """ + str(f["algorithms_ranked"]) + """ of """ + str(f["algorithms"]) + """ benchmarked AI algorithms, from """ + str(f["teams"]) + """ teams,
 evaluated on """ + f"{f['test_volumes']:,}" + """ out-of-distribution CT volumes from """ + str(f["test_hospitals"]) + """ hospitals.">
 <style>
 :root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e5e5e5;--accent:#0b6bcb;
@@ -213,7 +218,7 @@ from hospitals the models never saw during training.</p>
   <li><b>""" + f"{f['train_volumes']:,}" + """</b>training CT · """ + str(f["train_hospitals"]) + """ hospitals</li>
   <li><b>""" + f"{f['test_volumes']:,}" + """</b>test CT · """ + str(f["test_hospitals"]) + """ hospitals</li>
   <li><b>""" + str(f["organs"]) + """</b>anatomical structures</li>
-  <li><b>""" + str(f["algorithms"]) + """</b>AI algorithms</li>
+  <li><b>""" + str(f["algorithms_ranked"]) + """</b>AI algorithms ranked (of """ + str(f["algorithms"]) + """ benchmarked)</li>
   <li><b>""" + str(f["teams"]) + """</b>research teams</li>
 </ul>
 <div class="tabs" id="tabs" role="tablist"></div>
